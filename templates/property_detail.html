@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+{% block title %}Detalles de la Propiedad{% endblock %}
+{% block content %}
+<!-- Hero Section with Single Thumbnail and Text Over Image -->
+<section class="property-detail-hero container mx-auto px-4" role="banner">
+    <div class="property-hero-overlay">
+        <span class="property-label" aria-label="Etiqueta de Propiedad">NUEVA CONSTRUCCIÓN</span>
+        <div class="property-hero-content">
+            <h1>{{ property.title or "Calle de la Luna, 12" }}</h1>
+            <p class="subtitle">Villa de lujo con vistas panorámicas</p>
+            <p class="location"><i class="fas fa-map-marker-alt"></i> {{ property.location or "Costa del Sol" }}, 29603, España</p>
+        </div>
+        <!-- Price and Details Over Image -->
+        <div class="property-hero-details">
+            <p class="price-over-image">{{ property.price | format_price }}€</p>
+            <p class="details-over-image">
+                <i class="fas fa-bed"></i> {{ property.bedrooms or 4 }} Hab.   
+                <i class="fas fa-bath"></i> {{ property.bathrooms or 2 }} Baños
+            </p>
+        </div>
+    </div>
+    <img src="{{ property.image or '/static/images/default_property.jpg' }}" alt="{{ property.title or 'Calle de la Luna, 12' }}" loading="lazy">
+</section>
+
+<!-- Video Tour Modal (No Close Button) -->
+<div id="video-tour-modal" class="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 hidden">
+    <div class="relative max-w-5xl w-full">
+        <iframe id="video-tour-iframe" src="" class="w-full h-[60vh] rounded-lg shadow-2xl" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- Main Content -->
+<main class="container mx-auto pt-0 pb-4 px-4 flex flex-col md:flex-row gap-8">
+    <!-- Left Column (70%) -->
+    <div class="w-full md:w-2/3">
+        <!-- Available Properties Table -->
+        <section class="property-section">
+            <h2 class="section-title">Disponible para la Venta</h2>
+            <div class="overflow-x-auto">
+                <table class="property-table">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Tipo de Propiedad</th>
+                            <th>Precio</th>
+                            <th>Hab.</th>
+                            <th>Baños</th>
+                            <th>Tamaño</th>
+                            <th>Disponibilidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ property.title or "Calle de la Luna, 12" }}</td>
+                            <td>{{ property.type or "Casa" }}</td>
+                            <td>{{ property.price | format_price }}€</td>
+                            <td>{{ property.bedrooms or 4 }}</td>
+                            <td>{{ property.bathrooms or 2 }}</td>
+                            <td>{{ property.size or "199 m²" }}</td>
+                            <td>Constantemente disponible</td>
+                        </tr>
+                        <tr>
+                            <td>{{ property.title or "Calle de la Luna, 12" }}</td>
+                            <td>{{ property.type or "Casa" }}</td>
+                            <td>289,000€</td>
+                            <td>2</td>
+                            <td>2</td>
+                            <td>118 m²</td>
+                            <td>Constantemente disponible</td>
+                        </tr>
+                        <tr>
+                            <td>{{ property.title or "Calle de la Luna, 12" }}</td>
+                            <td>{{ property.type or "Casa" }}</td>
+                            <td>341,000€</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>158 m²</td>
+                            <td>Constantemente disponible</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Description -->
+        <section class="property-section">
+            <h2 class="section-title">Descripción</h2>
+            <p class="text-gray-700">
+                {{ property.description or 'Esta impresionante propiedad combina elegancia moderna con vistas panorámicas. Con acabados de alta calidad, espacios abiertos y una ubicación privilegiada, es la elección perfecta para quienes buscan exclusividad y confort.' }}
+            </p>
+        </section>
+
+        <!-- Featured Amenities -->
+        <section class="property-section">
+            <h2 class="section-title">Características Destacadas</h2>
+            <div class="amenities-details">
+                <p><i class="fas fa-swimming-pool"></i> <strong>Piscina:</strong> Piscina Privada</p>
+                <p><i class="fas fa-car"></i> <strong>Garaje:</strong> Garaje para 2 Coches</p>
+                <p><i class="fas fa-solar-panel"></i> <strong>Energía:</strong> Paneles Solares</p>
+                <p><i class="fas fa-tree"></i> <strong>Jardín:</strong> Jardín Paisajístico</p>
+            </div>
+        </section>
+
+        <!-- Overview -->
+        <section class="property-section">
+            <h2 class="section-title">Descripción General</h2>
+            <div class="overview-details">
+                <p><i class="fas fa-home"></i> <strong>Tipo de Propiedad:</strong> {{ property.type or "Casa" }}</p>
+                <p><i class="fas fa-bed"></i> <strong>Habitaciones:</strong> {{ property.bedrooms or 4 }}</p>
+                <p><i class="fas fa-bath"></i> <strong>Baños:</strong> {{ property.bathrooms or 2 }}</p>
+                <p><i class="fas fa-ruler-combined"></i> <strong>Tamaño:</strong> {{ property.size or "199 m²" }}</p>
+            </div>
+            <p class="mt-4"><strong>ID de Propiedad:</strong> {{ property.id or "F0302401" }}</p>
+        </section>
+
+        <!-- Location (Error Fixed) -->
+        <section class="property-section">
+            <h2 class="section-title">Localización</h2>
+            <div class="location-details">
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Dirección:</strong> Calle de la Luna, 12</p>
+                <p><i class="fas fa-city"></i> <strong>Ciudad:</strong> {{ property.location or "Costa del Sol" }}</p>
+                <p><i class="fas fa-map"></i> <strong>Área:</strong> Costa del Sol</p>
+                <p><i class="fas fa-mail-bulk"></i> <strong>Código Postal:</strong> 29603</p>
+                <p><i class="fas fa-globe"></i> <strong>País:</strong> España</p>
+            </div>
+            <a href="https://www.google.com/maps/place/Calle+de+la+Luna,+12,+29603+Marbella,+M%C3%A1laga,+Spain" target="_blank" class="btn btn-blue mt-4 inline-block">
+                <i class="fas fa-map"></i> Abrir en Google Maps
+            </a>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.645!2d-4.885447!3d36.510021!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzbCsDMwJzM2LjAiTiA0wrA1MScwNi4zIlc!5e0!3m2!1ses!2ses!4v1698765432100"
+                    width="100%" height="300" style="border:0; border-radius: var(--border-radius); margin-top: 1rem;"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de la Propiedad"></iframe>
+        </section>
+
+        <!-- Gallery with Sliding Animation -->
+        <section class="property-section">
+            <h2 class="section-title">Galería</h2>
+            <div class="gallery-slider">
+                <div class="gallery-track">
+                    {% for i in range(1, 5) %}
+                    <img src="/static/images/property-{{ i }}.jpg" alt="Foto de la Propiedad {{ i }}" class="gallery-slide" loading="lazy">
+                    {% endfor %}
+                    <!-- Duplicate images for infinite loop effect -->
+                    {% for i in range(1, 5) %}
+                    <img src="/static/images/property-{{ i }}.jpg" alt="Foto de la Propiedad {{ i }}" class="gallery-slide" loading="lazy">
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Right Column (30%) -->
+    <aside class="w-full md:w-1/3">
+        <div class="contact-form-container sticky top-20">
+            <div class="contact-header">
+                <h3 class="contact-title">Contáctanos Hoy</h3>
+                <p class="contact-subtitle">¿Interesado en esta propiedad de lujo? ¡Déjanos tus datos y te contactaremos!</p>
+            </div>
+            <div class="flex items-center gap-2 mb-4">
+                <i class="fas fa-user-circle text-gold text-2xl"></i>
+                <div>
+                    <p class="font-semibold text-lg">Inmobiliaria Luxe</p>
+                    <p class="text-sm text-gray-600">Especialistas en Propiedades de Lujo</p>
+                </div>
+            </div>
+            <form method="POST" action="{{ url_for('contact') }}" id="contact-form" class="space-y-4">
+                <div class="form-group">
+                    <label for="name" class="sr-only">Nombre</label>
+                    <input type="text" id="name" name="name" placeholder="Nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="sr-only">Teléfono</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Teléfono" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="sr-only">Mensaje</label>
+                    <textarea id="message" name="message" placeholder="Hola, estoy interesado en [Calle de la Luna, 12]" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="role" class="sr-only">Rol</label>
+                    <select id="role" name="role" required>
+                        <option value="" disabled selected>Seleccionar Rol</option>
+                        <option value="agente">Soy agente</option>
+                        <option value="inmobiliaria">Soy inmobiliaria</option>
+                        <option value="comprador">Soy comprador</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+                <div class="form-group flex items-center gap-2">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms" class="text-sm text-gray-600">Al enviar este formulario, acepto los <a href="/terms" class="text-blue-600 hover:underline">Términos de Uso</a></label>
+                </div>
+                <div class="cta-button-group">
+                    <button type="submit" class="btn btn-blue cta-button cta-button-uniform">Enviar Email</button>
+                    <a href="tel:+34631281043" class="btn btn-outline cta-button cta-button-uniform">Llamar</a>
+                    <a href="https://wa.me/+34631281043?text=" id="whatsapp-btn" class="btn btn-whatsapp cta-button cta-button-uniform flex items-center gap-2"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </form>
+        </div>
+    </aside>
+</main>
+
+<!-- Scripts -->
+<script>
+    function addToFavorites() {
+        alert('Propiedad añadida a favoritos');
+    }
+
+    function openVideoTour() {
+        const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ"; // Replace with actual video URL
+        document.getElementById('video-tour-iframe').src = videoUrl;
+        document.getElementById('video-tour-modal').classList.remove('hidden');
+    }
+
+    // Update WhatsApp link dynamically
+    document.getElementById('message').addEventListener('input', function() {
+        const message = encodeURIComponent(this.value);
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        whatsappBtn.href = `https://wa.me/+34631281043?text=${message}`;
+    });
+</script>
+{% endblock %}

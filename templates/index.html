@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+{% block title %}Inicio{% endblock %}
+{% block content %}
+<!-- Hero Section with Background Image -->
+<div class="hero reveal" style="position: relative; height: 100vh; overflow: hidden; background: linear-gradient(135deg, #1e3a8a 0%, #2c2c2c 50%, #ffffff 100%);">
+    <video autoplay muted loop playsinline class="hero-video" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.7);">
+        <source src="/static/videos/video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); display: flex; align-items: center; justify-content: center; z-index: 2;">
+        <div class="hero-content" style="text-align: center; color: #ffffff; z-index: 3; padding: 2rem;">
+            <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 5rem); font-weight: 700; letter-spacing: 2px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); color: #38bdf8;">SOMOS ALIANZ</h1>
+            <h2 style="font-family: 'Roboto', sans-serif; font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 400; color: #ffffff; text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);">Inteligencia Inmobiliaria</h2>
+        </div>
+    </div>
+</div>
+
+<!-- Nuestra Filosofía -->
+<section class="philosophy reveal" style="padding: 6rem 2rem; background: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 2rem;">Nuestra Filosofía</h2>
+        <div class="text-center max-w-3xl mx-auto" style="color: #4b5563;">
+            <p style="font-family: 'Roboto', sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.8; text-align: center;">
+                En Inmobiliaria Alianz Estates somos partidarios de la Inteligencia Inmobiliaria, nos dedicamos a ofrecer propiedades en las zonas exclusivas de la Costa del Sol, desde Málaga hasta Sotogrande, combinando profesionalidad, discreción y un profundo conocimiento del mercado. Nuestro compromiso es encontrar el hogar perfecto para usted con un servicio personalizado.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Localizaciones Exclusivas -->
+<section class="locations reveal" style="padding: 6rem 2rem; background: #f9f9f9; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Localizaciones Exclusivas</h2>
+        <div class="locations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; justify-items: center;">
+            {% for loc in ['Málaga', 'Estepona', 'Fuengirola', 'Marbella', 'Mijas', 'Benahavís', 'Manilva', 'Casares', 'Sotogrande', 'Torremolinos'] %}
+            <div class="location-card" style="position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.4s ease;">
+                <img src="/static/images/location-{{ loc | lower }}.jpg" alt="{{ loc }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease;">
+                    <span style="color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 600; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);">{{ loc }}</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Propiedades Destacadas -->
+<section class="featured reveal" style="padding: 6rem 2rem; background: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Propiedades Destacadas</h2>
+        {% if featured %}
+        <div class="swiper" style="padding-bottom: 4rem; height: 500px;">
+            <div class="swiper-wrapper" style="display: flex; transition: transform 0.8s ease;">
+                {% for prop in featured %}
+                <div class="swiper-slide" style="width: 400px; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;">
+                    <a href="{{ url_for('property_detail', id=prop[0]) }}" style="display: block; position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-decoration: none;">
+                        <img src="/static/images/property-{{ loop.index }}.jpg" alt="{{ prop[1] }}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='/static/images/default_property.jpg'">
+                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); color: #ffffff;">
+                            <h3 style="font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; margin-bottom: 0.5rem;">{{ prop[4] }}</h3>
+                            <p style="font-family: 'Roboto', sans-serif; font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; color: #38bdf8; margin-bottom: 0.25rem;">{{ prop[2] | format_price }}€</p>
+                            <p style="font-family: 'Roboto', sans-serif; font-size: clamp(0.9rem, 2vw, 1.125rem);">{{ prop[3] }} Hab. | {{ prop[6] }} Baños</p>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); width: 50px; height: 50px; background: #1e3a8a; color: #ffffff; border-radius: 50%; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); transition: background 0.3s ease;"></div>
+            <div class="swiper-button-next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 50px; height: 50px; background: #1e3a8a; color: #ffffff; border-radius: 50%; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); transition: background 0.3s ease;"></div>
+        </div>
+        {% else %}
+        <p style="text-align: center; font-family: 'Roboto', sans-serif; font-size: 1.125rem; color: #4b5563;">No hay propiedades destacadas disponibles en este momento.</p>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Filtro de Propiedades -->
+<section class="filter reveal" style="padding: 6rem 2rem; background: #f9f9f9; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Encuentra tu Propiedad Ahora</h2>
+        <form method="GET" action="{{ url_for('properties') }}" class="filter-form max-w-4xl mx-auto" style="background: #ffffff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="location" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Ubicación</label>
+                    <select id="location" name="location" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+                        <option value="">Cualquier</option>
+                        {% for loc in locations %}
+                        <option value="{{ loc }}">{{ loc }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="type" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Tipo de Inmueble</label>
+                    <select id="type" name="type" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+                        <option value="">Cualquier</option>
+                        {% for t in types %}
+                        <option value="{{ t }}">{{ t }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="bedrooms" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Dormitorios (mínimo)</label>
+                    <select id="bedrooms" name="bedrooms" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+                        <option value="0">Cualquier</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4+</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="bathrooms" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Baños (mínimo)</label>
+                    <select id="bathrooms" name="bathrooms" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+                        <option value="0">Cualquier</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4+</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="price_min" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Precio Mínimo (€)</label>
+                    <input type="number" id="price_min" name="price_min" min="0" step="10000" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="price_max" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Precio Máximo (€)</label>
+                    <input type="number" id="price_max" name="price_max" min="0" step="10000" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="size" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Superficie Mínima (m²)</label>
+                    <input type="number" id="size" name="size" min="0" step="10" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+                </div>
+            </div>
+            <div class="text-center mt-6">
+                <button type="submit" style="background: #1e3a8a; color: #ffffff; padding: 1rem 2rem; border-radius: 8px; font-family: 'Roboto', sans-serif; font-size: 1.125rem; font-weight: 600; border: none; cursor: pointer; transition: background 0.3s ease;">Buscar Propiedades</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Nuestros Servicios -->
+<section class="services reveal my-12" style="padding: 6rem 2rem; background: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Nuestros Servicios</h2>
+        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; justify-items: center;">
+            {% for service in ['Venta de Propiedades', 'Obra Nueva', 'Consultoría de Inversiones', 'Construcciones'] %}
+            <a href="{{ url_for('service_detail', id=loop.index0 + 1) }}" class="service-card" style="position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-decoration: none; transition: transform 0.4s ease;">
+                <img src="/static/images/service-{{ service | lower | replace(' ', '-') }}.jpg" alt="{{ service }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent); color: #ffffff; text-align: center;">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 600;">{{ service }}</h3>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Tipos de Inmuebles -->
+<section class="types reveal" style="padding: 6rem 2rem; background: #f9f9f9; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Tipos de Inmuebles</h2>
+        <div class="types-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; justify-items: center;">
+            {% for type in ['Apartamento', 'Ático', 'Adosado', 'Villa'] %}
+            <a href="{{ url_for('properties', type=type) }}" class="type-card" style="position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-decoration: none; transition: transform 0.4s ease;">
+                <img src="/static/images/type-{{ type | lower }}.jpg" alt="{{ type }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent); color: #ffffff; text-align: center;">
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 600;">{{ type }}</h3>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

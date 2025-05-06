@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}Propiedades en Venta{% endblock %}
+{% block content %}
+<div class="container mx-auto py-12 px-4">
+    <!-- Título -->
+    <h1 class="text-3xl font-bold mb-8 text-center">AVAILABLE FOR SALE</h1>
+
+    <!-- Tabla de Propiedades -->
+    <section class="listings-section bg-white reveal">
+        <div class="overflow-x-auto">
+            <table class="listings-table w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="p-4 text-left font-semibold text-gray-700">TITLE</th>
+                        <th class="p-4 text-left font-semibold text-gray-700">PROPERTY TYPE</th>
+                        <th class="p-4 text-left font-semibold text-gray-700">PRICE</th>
+                        <th class="p-4 text-left font-semibold text-gray-700">BEDS</th>
+                        <th class="p-4 text-left font-semibold text-gray-700">BATHS</th>
+                        <th class="p-4 text-left font-semibold text-gray-700">PROPERTY SIZE</th>
+                        <th class="p-4 text-left font-semibold text-gray-700">AVAILABLE DATE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for property in properties %}
+                    <tr class="border-b border-gray-200 hover:bg-gray-50">
+                        <td class="p-4"><a href="{{ url_for('property_detail', id=property[0]) }}" class="text-blue-600 hover:underline">{{ property[1] }}</a></td>
+                        <td class="p-4">{{ property[5] }}</td>
+                        <td class="p-4">{{ property[2] | format_price }}€</td>
+                        <td class="p-4">{{ property[3] }}</td>
+                        <td class="p-4">{{ property[6] }}</td>
+                        <td class="p-4">{{ property[7] }}</td>
+                        <td class="p-4">Constantly available</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
+{% endblock %}
