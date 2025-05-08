@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 /* ==========================================================================
    Estilos Generales - Inmobiliaria Luxe
    ========================================================================== */
    :root {
     --navy-blue: #1E3A8A; /* Replaces dark-gray and gold */
+=======
+:root {--navy-blue: #1E3A8A; /* Replaces dark-gray and gold */
+>>>>>>> 9782bed (css arreglado)
     --celeste: #38BDF8; /* Replaces blue-500 */
     --celeste-dark: #0EA5E9; /* Replaces blue-600 */
     --light-gray: #f9f5ec;
@@ -16,6 +20,7 @@
     --shadow-hover: 0 6px 12px rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
     --border-radius: 8px;
+<<<<<<< HEAD
     --gradient-luxe: linear-gradient(135deg, #1E3A8A 0%, #2c2c2c 100%); /* Updated */
 }
 
@@ -43,10 +48,36 @@ p, a, label, input, select, textarea {
     font-family: 'Roboto', 'Open Sans', sans-serif;
     font-weight: 400;
 }
+=======
+    --gradient-luxe: linear-gradient(135deg, #1E3A8A 0%, #2c2c2c 100%); /* Updated */}
+
+/* ==========================================================================
+   Estilos Generales - Inmobiliaria Luxe
+   ========================================================================== */
+   
+
+* {margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+
+body {font-family: 'Roboto', 'Open Sans', sans-serif;
+    background-color: var(--white);
+    color: var(--dark-gray);
+    line-height: 1.6;
+    overflow-x: hidden;}
+
+h1, h2, h3, h4 {font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.02em;}
+
+p, a, label, input, select, textarea {font-family: 'Roboto', 'Open Sans', sans-serif;
+    font-weight: 400;}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    Utilidades
    ========================================================================== */
+<<<<<<< HEAD
 .container {
     max-width: 1280px;
     margin: 0 auto;
@@ -300,6 +331,156 @@ p, a, label, input, select, textarea {
 
 .btn {
     padding: 0.5rem 1rem;
+=======
+.container {max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;}
+
+.mx-auto {margin-left: auto;
+    margin-right: auto;}
+
+.py-8 {padding-top: 2rem;
+    padding-bottom: 2rem;}
+
+.py-12 {padding-top: 3rem;
+    padding-bottom: 3rem;}
+
+.px-4 {padding-left: 1rem;
+    padding-right: 1rem;}
+
+.text-3xl {font-size: 1.875rem;}
+
+.text-4xl {font-size: 2.25rem;}
+
+.text-5xl {font-size: 3rem;}
+
+.text-2xl {font-size: 1.5rem;}
+
+.text-xl {font-size: 1.25rem;}
+
+.text-lg {font-size: 1.125rem;}
+
+.text-sm {font-size: 0.875rem;}
+
+.font-bold {font-weight: 700;}
+
+.font-semibold {font-weight: 600;}
+
+.font-medium {font-weight: 500;}
+
+.text-center {text-align: center;}
+
+.max-w-3xl {max-width: 48rem;}
+
+.max-w-lg {max-width: 32rem;}
+
+.max-w-4xl {max-width: 64rem;}
+
+.mb-4 {margin-bottom: 1rem;}
+
+.mb-6 {margin-bottom: 1.5rem;}
+
+.mb-8 {margin-bottom: 2rem;}
+
+.my-12 {margin-top: 3rem;
+    margin-bottom: 3rem;}
+
+.my-24 {margin-top: 6rem;
+    margin-bottom: 6rem;}
+
+.mt-1 {margin-top: 0.25rem;}
+
+.mt-2 {margin-top: 0.5rem;}
+
+.mt-4 {margin-top: 1rem;}
+
+.mt-6 {margin-top: 1.5rem;}
+
+.mt-8 {margin-top: 2rem;}
+
+.space-y-4 > * + * {margin-top: 1rem;}
+
+.space-y-8 > * + * {margin-top: 2rem;}
+
+.text-gray-700 {color: var(--gray-700);}
+
+.text-gray-600 {color: var(--gray-600);}
+
+.bg-green-100 {background-color: #d1fae5;}
+
+.bg-white {background-color: var(--white);}
+
+.shadow-lg {box-shadow: var(--shadow);}
+
+.rounded-lg {border-radius: var(--border-radius);}
+
+.text-gold {color: var(--gold);}
+
+.bg-gold {background-color: var(--gold);}
+
+.grid {display: grid;}
+
+.grid-cols-1 {grid-template-columns: 1fr;}
+
+.grid-cols-2 {grid-template-columns: repeat(2, 1fr);}
+
+.grid-cols-5 {grid-template-columns: repeat(5, 1fr);}
+
+.sm\:grid-cols-2 {@media (min-width: 640px) {
+        grid-template-columns: repeat(2, 1fr);}
+
+}
+
+.sm\:grid-cols-3 {@media (min-width: 640px) {
+        grid-template-columns: repeat(3, 1fr);}
+
+}
+
+.md\:grid-cols-2 {@media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);}
+
+}
+
+.md\:grid-cols-3 {@media (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);}
+
+}
+
+.md\:grid-cols-4 {@media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);}
+
+}
+
+.lg\:grid-cols-3 {@media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);}
+
+}
+
+.lg\:grid-cols-4 {@media (min-width: 1024px) {
+        grid-template-columns: repeat(4, 1fr);}
+
+}
+
+.lg\:grid-cols-5 {@media (min-width: 1024px) {
+        grid-template-columns: repeat(5, 1fr);}
+
+}
+
+.gap-2 {gap: 0.5rem;}
+
+.gap-4 {gap: 1rem;}
+
+.gap-6 {gap: 1.5rem;}
+
+.gap-8 {gap: 2rem;}
+
+.section-title {font-size: 1.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 1rem;
+    font-weight: 700;}
+
+.btn {padding: 0.5rem 1rem;
+>>>>>>> 9782bed (css arreglado)
     border-radius: 4px;
     font-size: 0.875rem;
     font-weight: 500;
@@ -307,6 +488,7 @@ p, a, label, input, select, textarea {
     transition: var(--transition);
     display: inline-block;
     text-decoration: none;
+<<<<<<< HEAD
     text-align: center;
 }
 
@@ -355,12 +537,45 @@ p, a, label, input, select, textarea {
 
 input, textarea, select {
     width: 100%;
+=======
+    text-align: center;}
+
+.btn-blue {background-color: var(--blue-500);
+    color: var(--white);
+    border: none;}
+
+.btn-blue:hover {background-color: var(--blue-600);}
+
+.btn-outline {background-color: transparent;
+    color: var(--blue-500);
+    border: 1px solid var(--blue-500);}
+
+.btn-outline:hover {background-color: var(--blue-500);
+    color: var(--white);}
+
+.btn-whatsapp {background-color: var(--green-500);
+    color: var(--white);
+    border: none;}
+
+.btn-whatsapp:hover {background-color: var(--green-600);}
+
+.form-group {margin-bottom: 1rem;}
+
+.form-group label {display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 0.5rem;}
+
+input, textarea, select {width: 100%;
+>>>>>>> 9782bed (css arreglado)
     padding: 0.5rem;
     border: 1px solid #e5e7eb;
     border-radius: 4px;
     font-size: 0.875rem;
     background: var(--white);
     color: var(--black);
+<<<<<<< HEAD
     transition: border-color 0.3s ease;
 }
 
@@ -389,10 +604,30 @@ textarea {
     opacity: 1;
     transform: translateY(0);
 }
+=======
+    transition: border-color 0.3s ease;}
+
+input:focus, textarea:focus, select:focus {outline: none;
+    border-color: var(--blue-500);}
+
+input[type="checkbox"] {width: auto;
+    accent-color: var(--blue-500);}
+
+textarea {resize: vertical;}
+
+/* Animations */
+.reveal {opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;}
+
+.reveal.active {opacity: 1;
+    transform: translateY(0);}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    Navegación
    ========================================================================== */
+<<<<<<< HEAD
 :root {
     --white: #FFFFFF;
     --dark-gray: #333333;
@@ -405,12 +640,22 @@ html, body {
     overflow-x: hidden;
     max-width: 100%;
 }
+=======
+
+
+html, body {overflow-x: hidden;
+    max-width: 100%;}
+>>>>>>> 9782bed (css arreglado)
 
 /* ===============================
    Navbar Base Styles
    =============================== */
+<<<<<<< HEAD
 .navbar {
     background: transparent;
+=======
+.navbar {background: transparent;
+>>>>>>> 9782bed (css arreglado)
     box-shadow: none;
     position: fixed;
     top: 0;
@@ -418,6 +663,7 @@ html, body {
     z-index: 1000;
     transition: var(--transition);
     margin-top: 1.5rem;
+<<<<<<< HEAD
     height: 60px;
 }
 
@@ -429,12 +675,22 @@ html, body {
 
 .navbar-container {
     max-width: 100%;
+=======
+    height: 60px;}
+
+.navbar.scrolled {background: linear-gradient(135deg, var(--navy), transparent);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 0;}
+
+.navbar-container {max-width: 100%;
+>>>>>>> 9782bed (css arreglado)
     margin: 0 auto;
     padding: 0 1rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+<<<<<<< HEAD
     height: 100%;
 }
 
@@ -453,10 +709,24 @@ html, body {
 .navbar-logo:hover img {
     transform: scale(1.05);
 }
+=======
+    height: 100%;}
+
+.navbar-logo {display: flex;
+    align-items: center;
+    text-decoration: none;}
+
+.navbar-logo img {height: 60px;
+    width: auto;
+    transition: var(--transition);}
+
+.navbar-logo:hover img {transform: scale(1.05);}
+>>>>>>> 9782bed (css arreglado)
 
 /* ===============================
    Menu Styles
    =============================== */
+<<<<<<< HEAD
 .nav-menu {
     display: flex;
     align-items: center;
@@ -467,6 +737,15 @@ html, body {
 
 .nav-menu a {
     color: var(--white);
+=======
+.nav-menu {display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    background: none;}
+
+.nav-menu a {color: var(--white);
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Playfair Display', serif;
     font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 500;
@@ -474,17 +753,24 @@ html, body {
     margin: 0 1rem;
     transition: var(--transition);
     text-decoration: none;
+<<<<<<< HEAD
     position: relative;
 }
 
 .nav-menu a::after {
     content: '';
+=======
+    position: relative;}
+
+.nav-menu a::after {content: '';
+>>>>>>> 9782bed (css arreglado)
     position: absolute;
     width: 0;
     height: 2px;
     bottom: 0;
     left: 1.25rem;
     background-color: var(--gold);
+<<<<<<< HEAD
     transition: width 0.4s ease;
 }
 
@@ -503,18 +789,37 @@ html, body {
     outline: 2px solid var(--gold);
     outline-offset: 2px;
 }
+=======
+    transition: width 0.4s ease;}
+
+@media (hover: hover) and (pointer: fine) {.nav-menu a:hover::after {
+        width: calc(100% - 2.5rem);}
+
+.nav-menu a:hover {color: var(--gold);
+        transform: scale(1.05);}
+
+}
+
+.nav-menu a:focus {outline: 2px solid var(--gold);
+    outline-offset: 2px;}
+>>>>>>> 9782bed (css arreglado)
 
 /* ===============================
    Burger Button
    =============================== */
+<<<<<<< HEAD
 .nav-toggle {
     display: none;
+=======
+.nav-toggle {display: none;
+>>>>>>> 9782bed (css arreglado)
     background: none;
     border: none;
     font-size: 2rem;
     color: var(--white);
     cursor: pointer;
     padding: 0.5rem;
+<<<<<<< HEAD
     transition: var(--transition);
 }
 
@@ -527,23 +832,42 @@ html, body {
     outline-offset: 2px;
     border-radius: 4px;
 }
+=======
+    transition: var(--transition);}
+
+.nav-toggle:hover {color: var(--gold);}
+
+.nav-toggle:focus {outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-radius: 4px;}
+>>>>>>> 9782bed (css arreglado)
 
 /* ===============================
    Hero Section
    =============================== */
+<<<<<<< HEAD
 .hero {
     position: relative;
+=======
+.hero {position: relative;
+>>>>>>> 9782bed (css arreglado)
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-size: cover;
     background-position: center;
+<<<<<<< HEAD
     padding-top: 80px;
 }
 
 .hero-overlay {
     position: absolute;
+=======
+    padding-top: 80px;}
+
+.hero-overlay {position: absolute;
+>>>>>>> 9782bed (css arreglado)
     top: 0;
     left: 0;
     width: 100%;
@@ -551,6 +875,7 @@ html, body {
     background: rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     justify-content: center;
 }
 
@@ -566,16 +891,33 @@ html, body {
     letter-spacing: 2px;
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
 }
+=======
+    justify-content: center;}
+
+.hero-content {text-align: center;
+    color: var(--white);}
+
+.hero-content h1 {font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);}
+>>>>>>> 9782bed (css arreglado)
 
 /* ===============================
    Footer Styles
    =============================== */
+<<<<<<< HEAD
 .footer {
     background: var(--navy);
+=======
+.footer {background: var(--navy);
+>>>>>>> 9782bed (css arreglado)
     color: var(--white);
     padding: 3rem 1rem;
     margin-top: 4rem;
     width: 100%;
+<<<<<<< HEAD
     max-width: 100%;
 }
 
@@ -659,11 +1001,59 @@ html, body {
     .footer p, .footer a {
         font-size: 0.875rem;
     }
+=======
+    max-width: 100%;}
+
+.container {max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;}
+
+.grid {display: grid;
+    gap: 2rem;}
+
+.md\:grid-cols-3 {grid-template-columns: repeat(3, 1fr);}
+
+.footer h3 {font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--gold);}
+
+.footer p, .footer a {font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: var(--white);
+    line-height: 1.5;
+    transition: var(--transition);}
+
+.footer a:hover {color: var(--gold);}
+
+.footer-social {margin-top: 1rem;}
+
+.footer-social a {margin: 0 0.5rem;
+    font-size: 1.25rem;
+    color: var(--white);
+    transition: var(--transition);}
+
+.footer-social a:hover {color: var(--gold);
+    transform: scale(1.1);}
+
+/* Responsive Footer Adjustments */
+@media (max-width: 767px) {.md\:grid-cols-3 {
+        grid-template-columns: 1fr;}
+
+.footer {padding: 2rem 0.5rem;}
+
+.footer h3 {font-size: 1.25rem;}
+
+.footer p, .footer a {font-size: 0.875rem;}
+
+>>>>>>> 9782bed (css arreglado)
 }
 
 /* ===============================
    Responsive: Mobile First
    =============================== */
+<<<<<<< HEAD
 @media (max-width: 767px) {
     .navbar {
         margin-top: 0;
@@ -697,6 +1087,28 @@ html, body {
 
     .nav-menu {
         display: none;
+=======
+@media (max-width: 767px) {.navbar {
+        margin-top: 0;
+        background: linear-gradient(135deg, var(--navy), transparent);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        height: 60px;}
+
+.navbar.scrolled {background: var(--navy);}
+
+.navbar-container {padding: 0 0.75rem;
+        justify-content: flex-start; /* Keep logo and toggle side by side */}
+
+.navbar-logo {margin-right: 0.5rem;}
+
+.navbar-logo img {height: 40px;}
+
+.nav-toggle {display: block;
+        font-size: 1.5rem;
+        padding: 0.25rem;}
+
+.nav-menu {display: none;
+>>>>>>> 9782bed (css arreglado)
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
@@ -712,6 +1124,7 @@ html, body {
         z-index: 999;
         width: 100%;
         max-height: calc(100vh - 60px);
+<<<<<<< HEAD
         overflow-y: auto;
     }
 
@@ -722,12 +1135,21 @@ html, body {
 
     .nav-menu a {
         width: 100%;
+=======
+        overflow-y: auto;}
+
+.nav-menu.active {display: flex;
+        transform: translateY(0);}
+
+.nav-menu a {width: 100%;
+>>>>>>> 9782bed (css arreglado)
         text-align: center;
         font-size: 1rem;
         padding: 0.75rem 1rem;
         margin: 0;
         border-bottom: 1px solid rgba(212, 175, 55, 0.2); /* Gold with opacity for contrast */
         color: var(--gold); /* Change text to gold for better contrast */
+<<<<<<< HEAD
         background: rgba(255, 255, 255, 0.05); /* Subtle white overlay for contrast */
     }
 
@@ -744,11 +1166,24 @@ html, body {
     .hero {
         padding-top: 60px;
     }
+=======
+        background: rgba(255, 255, 255, 0.05); /* Subtle white overlay for contrast */}
+
+.nav-menu a:hover {background: rgba(255, 255, 255, 0.1); /* Slightly brighter on hover */
+        color: var(--white);}
+
+.nav-menu a::after {left: 0;
+        background-color: var(--white); /* White underline on hover for contrast */}
+
+.hero {padding-top: 60px;}
+
+>>>>>>> 9782bed (css arreglado)
 }
 
 /* ===============================
    Larger Screens
    =============================== */
+<<<<<<< HEAD
 @media (min-width: 768px) {
     .navbar-container {
         padding: 0 2rem;
@@ -760,11 +1195,20 @@ html, body {
 
     .nav-menu {
         display: flex !important;
+=======
+@media (min-width: 768px) {.navbar-container {
+        padding: 0 2rem;}
+
+.navbar-logo img {height: 60px;}
+
+.nav-menu {display: flex !important;
+>>>>>>> 9782bed (css arreglado)
         position: static;
         flex-direction: row;
         background: none;
         transform: none;
         box-shadow: none;
+<<<<<<< HEAD
         padding: 0;
     }
 
@@ -797,11 +1241,35 @@ html, body {
     .navbar-logo img {
         height: 70px;
     }
+=======
+        padding: 0;}
+
+.nav-menu a {font-size: 1.125rem;
+        border-bottom: none;
+        background: none; /* Ensure no background on larger screens */
+        color: var(--white); /* Reset to white for larger screens */}
+
+.nav-menu a:hover {background: none;
+        color: var(--gold);}
+
+.nav-toggle {display: none !important;}
+
+.hero {padding-top: 100px;}
+
+}
+
+@media (min-width: 1200px) {.nav-menu a {
+        font-size: 1.25rem;}
+
+.navbar-logo img {height: 70px;}
+
+>>>>>>> 9782bed (css arreglado)
 }
 
 /* ===============================
    Accessibility
    =============================== */
+<<<<<<< HEAD
 @media (prefers-contrast: high) {
     .nav-menu a,
     .nav-toggle {
@@ -824,11 +1292,30 @@ html, body {
         transition: none !important;
         animation: none !important;
     }
+=======
+@media (prefers-contrast: high) {.nav-menu a,
+    .nav-toggle {
+        color: #FFF;}
+
+.nav-menu a:focus,
+    .nav-toggle:focus {outline: 3px solid #FFF;}
+
+.nav-menu a {background: rgba(0, 0, 0, 0.3); /* Darker background for high contrast */
+        color: var(--white);}
+
+}
+
+@media (prefers-reduced-motion: reduce) {* {
+        transition: none !important;
+        animation: none !important;}
+
+>>>>>>> 9782bed (css arreglado)
 }
 
 /* ==========================================================================
    Luxury Blue Theme - Enhanced CSS for Index Sections
    ========================================================================== */
+<<<<<<< HEAD
    :root {
     --blue-500: #3b82f6;
     --blue-600: #2563eb;
@@ -863,26 +1350,52 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
 }
+=======
+   
+
+body {background: var(--light-gray);
+    color: var(--dark-gray);
+    font-family: 'Playfair Display', serif;
+    line-height: 1.7;
+    font-size: 16px;}
+
+.section-padding {padding: 7rem 1rem;}
+
+.container {max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    Hero Section
    ========================================================================== */
+<<<<<<< HEAD
 .hero {
     position: relative;
+=======
+   .hero {position: relative;
+>>>>>>> 9782bed (css arreglado)
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+<<<<<<< HEAD
     padding-top: 80px;
 }
 .hero-video {
     position: absolute;
+=======
+    padding-top: 80px;}
+
+.hero-video {position: absolute;
+>>>>>>> 9782bed (css arreglado)
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+<<<<<<< HEAD
     z-index: -1;
 }
 .hero-overlay {
@@ -908,10 +1421,33 @@ body {
     margin-top: 1rem;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+=======
+    z-index: -1;}
+
+.hero-overlay {position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+    z-index: 0;}
+
+.hero-content {text-align: center;
+    z-index: 1;}
+
+.hero-content h1 {font-size: clamp(3.5rem, 10vw, 6rem);
+    color: var(--white);
+    font-weight: 700;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);}
+
+.hero-content h2 {font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--celeste);
+    font-weight: 400;
+    margin-top: 1rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    Nuestra Filosofía
    ========================================================================== */
+<<<<<<< HEAD
 .philosophy {
     background: var(--white);
     padding: 7rem 2rem;
@@ -928,10 +1464,25 @@ body {
     color: var(--dark-gray);
     margin-top: 1.5rem;
 }
+=======
+.philosophy {background: var(--white);
+    padding: 7rem 2rem;}
+
+.philosophy .section-title {font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--navy-blue);
+    font-weight: 700;
+    text-align: center;}
+
+.philosophy p {font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 1.9;
+    color: var(--gray-600);
+    margin-top: 1.5rem;}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    Localizaciones
    ========================================================================== */
+<<<<<<< HEAD
 .locations {
     background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
     padding: 7rem 2rem;
@@ -949,10 +1500,28 @@ body {
 }
 .location-card {
     position: relative;
+=======
+.locations {background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+    padding: 6rem 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);}
+
+.locations .section-title {font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--navy-blue);
+    font-weight: 700;
+    margin-bottom: 3rem;}
+
+.locations-grid {display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    justify-items: center;}
+
+.location-card {position: relative;
+>>>>>>> 9782bed (css arreglado)
     aspect-ratio: 4/3;
     overflow: hidden;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
+<<<<<<< HEAD
     transition: var(--transition);
 }
 .location-card:hover {
@@ -970,11 +1539,22 @@ body {
 }
 .location-overlay {
     position: absolute;
+=======
+    transition: var(--transition);}
+
+.location-card img {width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;}
+
+.location-overlay {position: absolute;
+>>>>>>> 9782bed (css arreglado)
     inset: 0;
     background: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     transition: background 0.5s ease;
 }
 .location-card:hover .location-overlay {
@@ -1077,10 +1657,20 @@ body {
     background: var(--celeste-dark);
     transform: scale(1.15);
 }
+=======
+    opacity: 0;
+    transition: opacity 0.4s ease;}
+
+.location-overlay span {color: var(--white);
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    Filtro de Propiedades
    ========================================================================== */
+<<<<<<< HEAD
 .filter {
     background: var(--light-gray);
     padding: 7rem 2rem;
@@ -1124,10 +1714,45 @@ body {
 }
 .filter-form .btn {
     background: var(--blue-500);
+=======
+.filter {background: var(--light-gray);
+    padding: 7rem 2rem;}
+
+.filter .section-title {font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--navy-blue);
+    font-weight: 700;
+    margin-bottom: 3rem;}
+
+.filter-form {background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);}
+
+.form-group {display: flex;
+    flex-direction: column;
+    gap: 0.5rem;}
+
+.form-group label {font-size: 1.125rem;
+    color: var(--navy-blue);
+    font-weight: 600;}
+
+input, select {padding: 0.75rem;
+    border: 2px solid var(--light-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);}
+
+input:focus, select:focus {border-color: var(--celeste);
+    outline: none;
+    box-shadow: 0 0 8px rgba(56, 189, 248, 0.3);}
+
+.filter-form .btn {background: var(--blue-500);
+>>>>>>> 9782bed (css arreglado)
     padding: 1rem 2rem;
     border-radius: 8px;
     font-size: 1.125rem;
     font-weight: 600;
+<<<<<<< HEAD
     transition: var(--transition);
 }
 .filter-form .btn:hover {
@@ -1809,6 +2434,43 @@ input:focus, select:focus {
     .featured .swiper-slide {
         width: 100%;
     }
+=======
+    transition: var(--transition);}
+
+.filter-form .btn:hover {background: var(--blue-600);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);}
+
+/* ==========================================================================
+   Servicios
+   ========================================================================== */
+.services {background: var(--white);
+    padding: 7rem 2rem;}
+
+.services .section-title {font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--navy-blue);
+    font-weight: 700;
+    margin-bottom: 3rem;}
+
+.services-grid {display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;}
+
+/* ==========================================================================
+   Animaciones
+   ========================================================================== */
+.reveal {opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;}
+
+@keyframes fadeInUp {from {
+        opacity: 0;
+        transform: translateY(20px);}
+
+to {opacity: 1;
+        transform: translateY(0);}
+
+>>>>>>> 9782bed (css arreglado)
 }
 /* ==========================================================================
    Property Detail (property_detail.html)
@@ -1817,6 +2479,7 @@ input:focus, select:focus {
 /* ==========================================================================
    Property Detail Page Styling
    ========================================================================== */
+<<<<<<< HEAD
    :root {
     --frosted-bg: rgba(255, 255, 255, 0.1);
     --frosted-blur: blur(2px);
@@ -1829,11 +2492,18 @@ input:focus, select:focus {
 /* Hero Section with Single Thumbnail and Text Over Image */
 .property-detail-hero {
     position: relative;
+=======
+   
+
+/* Hero Section with Single Thumbnail and Text Over Image */
+.property-detail-hero {position: relative;
+>>>>>>> 9782bed (css arreglado)
     height: clamp(600px, 70vh, 800px); /* Adjust height as needed */
     width: 100%; /* Ensure it spans the full width */
     overflow: hidden; /* Prevent content from spilling out */
     margin: 0 auto; /* Center the container */
     padding: 0; /* Remove any default padding */
+<<<<<<< HEAD
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
@@ -1850,6 +2520,18 @@ body {
 
 .property-hero-overlay {
     position: absolute;
+=======
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);}
+
+.property-detail-hero img {width: 150%; /* Fill the container's width */
+    height: 100%; /* Fill the container's height */
+    object-fit: cover; /* Maintain aspect ratio while filling the container */
+    display: block; /* Prevent inline spacing issues */}
+
+body {overflow-x: hidden; /* Prevent horizontal scrolling */}
+
+.property-hero-overlay {position: absolute;
+>>>>>>> 9782bed (css arreglado)
     top: 0;
     left: 0;
     width: 100%;
@@ -1859,11 +2541,17 @@ body {
     flex-direction: column;
     justify-content: space-between;
     padding: clamp(2rem, 4vw, 3rem); /* Increased padding for better spacing */
+<<<<<<< HEAD
     z-index: 10;
 }
 
 .property-label {
     background-color: var(--dark-gray);
+=======
+    z-index: 10;}
+
+.property-label {background-color: var(--dark-gray);
+>>>>>>> 9782bed (css arreglado)
     color: var(--white);
     padding: 0.5rem 1rem;
     font-size: clamp(0.75rem, 1.5vw, 0.875rem);
@@ -1873,6 +2561,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     box-shadow: var(--glow);
+<<<<<<< HEAD
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -1889,11 +2578,24 @@ body {
 
 .property-hero-content h1 {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
+=======
+    transition: background-color 0.3s ease, transform 0.3s ease;}
+
+.property-label:hover {background-color: var(--gray-700);
+    transform: scale(1.05);}
+
+.property-hero-content {color: var(--white);
+    text-align: left;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);}
+
+.property-hero-content h1 {font-size: clamp(2.5rem, 5vw, 3.5rem);
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Playfair Display', serif;
     font-weight: 800;
     margin-bottom: 1rem; /* Increased spacing */
     line-height: 1.2;
     letter-spacing: 0.02em;
+<<<<<<< HEAD
     transition: transform 0.3s ease;
 }
 
@@ -1917,6 +2619,23 @@ body {
 
 .property-hero-details {
     position: absolute;
+=======
+    transition: transform 0.3s ease;}
+
+.property-hero-content h1:hover {transform: translateY(-3px);}
+
+.property-hero-content .subtitle {font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.8;
+    margin-bottom: 1rem; /* Increased spacing */}
+
+.property-hero-content .location {font-size: clamp(1rem, 2vw, 1.25rem);
+    margin-bottom: 1.5rem; /* Increased spacing */
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.9;}
+
+.property-hero-details {position: absolute;
+>>>>>>> 9782bed (css arreglado)
     bottom: 6.5rem; /* Move to the top */
     right: 1.5rem; /* Align to the right */
     color: var(--white);
@@ -1927,6 +2646,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end; /* Align text to the right */
+<<<<<<< HEAD
     gap: 0.25rem; /* Add spacing between elements */
 }
 
@@ -1940,11 +2660,23 @@ body {
 
 .property-hero-details .details-over-image {
     font-size: clamp(1rem, 2.5vw, 1.25rem); /* Responsive font size */
+=======
+    gap: 0.25rem; /* Add spacing between elements */}
+
+.property-hero-details .price-over-image {font-size: clamp(2rem, 4vw, 2.5rem); /* Responsive font size */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 0.25rem; /* Reduce spacing */}
+
+.property-hero-details .details-over-image {font-size: clamp(1rem, 2.5vw, 1.25rem); /* Responsive font size */
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Roboto', sans-serif;
     color: var(--white);
     opacity: 1; /* Full opacity for clarity */
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     gap: 0.5rem; /* Add spacing between icons and text */
 }
 
@@ -1954,21 +2686,35 @@ body {
 
 .property-hero-actions {
     position: absolute;
+=======
+    gap: 0.5rem; /* Add spacing between icons and text */}
+
+.property-hero-details .details-over-image i {margin-right: 0; /* Remove extra margin */}
+
+.property-hero-actions {position: absolute;
+>>>>>>> 9782bed (css arreglado)
     top: 1.5rem;
     right: 1.5rem;
     display: flex;
     gap: 0.75rem;
+<<<<<<< HEAD
     z-index: 20;
 }
 
 .property-hero-actions button {
     background: rgba(0, 0, 0, 0.6);
+=======
+    z-index: 20;}
+
+.property-hero-actions button {background: rgba(0, 0, 0, 0.6);
+>>>>>>> 9782bed (css arreglado)
     color: var(--white);
     border: none;
     padding: 0.75rem;
     border-radius: 50%;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+<<<<<<< HEAD
     box-shadow: var(--glow);
 }
 
@@ -1995,10 +2741,29 @@ body {
 /* Property Section */
 .property-section {
     background: var(--white);
+=======
+    box-shadow: var(--glow);}
+
+.property-hero-actions button:hover {background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);}
+
+@property-hero-actions button:focus {outline: 3px solid var(--white);
+    outline-offset: 2px;}
+
+/* Video Tour Modal (No Close Button) */
+#video-tour-modal {animation: fadeIn 0.5s ease-out;}
+
+#video-tour-iframe {border: none;}
+
+/* Property Section */
+.property-section {background: var(--white);
+>>>>>>> 9782bed (css arreglado)
     padding: clamp(1.5rem, 3vw, 2rem);
     border-radius: var(--border-radius);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+<<<<<<< HEAD
     transition: transform 0.3s ease;
 }
 
@@ -2008,11 +2773,19 @@ body {
 
 .section-title {
     font-size: clamp(1.5rem, 3vw, 2rem);
+=======
+    transition: transform 0.3s ease;}
+
+.property-section:hover {transform: translateY(-5px);}
+
+.section-title {font-size: clamp(1.5rem, 3vw, 2rem);
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: var(--gray-800);
     margin-bottom: 1.5rem;
     border-bottom: 2px solid var(--gold);
+<<<<<<< HEAD
     padding-bottom: 0.5rem;
 }
 
@@ -2032,10 +2805,26 @@ body {
 
 .property-table th {
     background: #f8f9fa;
+=======
+    padding-bottom: 0.5rem;}
+
+/* Property Table */
+.property-table {width: 100%;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif;}
+
+.property-table th,
+.property-table td {padding: clamp(0.75rem, 1.5vw, 1rem);
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;}
+
+.property-table th {background: #f8f9fa;
+>>>>>>> 9782bed (css arreglado)
     font-weight: 600;
     font-size: clamp(0.875rem, 1.5vw, 1rem);
     color: var(--gray-600);
     text-transform: uppercase;
+<<<<<<< HEAD
     letter-spacing: 0.03em;
 }
 
@@ -2047,11 +2836,21 @@ body {
 /* Amenities Details */
 .amenities-details p {
     font-size: clamp(0.875rem, 1.5vw, 1rem);
+=======
+    letter-spacing: 0.03em;}
+
+.property-table td {font-size: clamp(0.875rem, 1.5vw, 1rem);
+    color: var(--gray-800);}
+
+/* Amenities Details */
+.amenities-details p {font-size: clamp(0.875rem, 1.5vw, 1rem);
+>>>>>>> 9782bed (css arreglado)
     margin-bottom: 0.75rem;
     font-family: 'Roboto', sans-serif;
     color: var(--gray-800);
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     gap: 0.75rem;
 }
 
@@ -2068,11 +2867,24 @@ body {
 /* Overview Details */
 .overview-details p {
     font-size: clamp(0.875rem, 1.5vw, 1rem);
+=======
+    gap: 0.75rem;}
+
+.amenities-details p i {color: var(--blue-500);
+    font-size: 1.25rem;}
+
+.amenities-details p strong {color: var(--gray-700);
+    font-weight: 900;}
+
+/* Overview Details */
+.overview-details p {font-size: clamp(0.875rem, 1.5vw, 1rem);
+>>>>>>> 9782bed (css arreglado)
     margin-bottom: 0.75rem;
     font-family: 'Roboto', sans-serif;
     color: var(--gray-800);
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     gap: 0.75rem;
 }
 
@@ -2094,11 +2906,27 @@ body {
 /* Location Details */
 .location-details p {
     font-size: clamp(0.875rem, 1.5vw, 1rem);
+=======
+    gap: 0.75rem;}
+
+.overview-details p i {color: var(--blue-500);
+    font-size: 1.25rem;
+    transition: color 0.3s ease;}
+
+.overview-details p:hover i {color: var(--blue-500);}
+
+.overview-details p strong {color: var(--gray-700);
+    font-weight: 900;}
+
+/* Location Details */
+.location-details p {font-size: clamp(0.875rem, 1.5vw, 1rem);
+>>>>>>> 9782bed (css arreglado)
     margin-bottom: 0.75rem;
     font-family: 'Roboto', sans-serif;
     color: var(--gray-800);
     display: flex;
     align-items: center;
+<<<<<<< HEAD
     gap: 0.75rem;
 }
 
@@ -2126,11 +2954,31 @@ body {
 
 .gallery-slide {
     flex: 0 0 auto;
+=======
+    gap: 0.75rem;}
+
+.location-details p i {color: var(--blue-500);
+    font-size: 1.25rem;}
+
+.location-details p strong {color: var(--gray-700);
+    font-weight: 900;}
+
+/* Gallery Slider */
+.gallery-slider {width: 100%;
+    overflow: hidden;
+    position: relative;}
+
+.gallery-track {display: flex;
+    animation: slide 20s infinite linear;}
+
+.gallery-slide {flex: 0 0 auto;
+>>>>>>> 9782bed (css arreglado)
     width: 400px;
     height: 250px;
     object-fit: cover;
     border-radius: 8px;
     margin-right: 1rem;
+<<<<<<< HEAD
     transition: transform 0.3s ease;
 }
 
@@ -2146,10 +2994,25 @@ body {
 /* Contact Form Container */
 .contact-form-container {
     background: linear-gradient(135deg, #f9f9f9, #ffffff);
+=======
+    transition: transform 0.3s ease;}
+
+.gallery-slide:hover {transform: scale(1.05);}
+
+@keyframes slide {0% { transform: translateX(0);}
+
+100% {transform: translateX(-50%);}
+
+}
+
+/* Contact Form Container */
+.contact-form-container {background: linear-gradient(135deg, #f9f9f9, #ffffff);
+>>>>>>> 9782bed (css arreglado)
     padding: clamp(1.5rem, 3vw, 2rem);
     border-radius: var(--border-radius);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+<<<<<<< HEAD
     border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
@@ -2165,10 +3028,22 @@ body {
 
 .contact-title {
     font-size: clamp(1.5rem, 3vw, 2rem);
+=======
+    border: 1px solid rgba(212, 175, 55, 0.2);}
+
+.contact-form-container:hover {transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);}
+
+.contact-header {text-align: center;
+    margin-bottom: 1.5rem;}
+
+.contact-title {font-size: clamp(1.5rem, 3vw, 2rem);
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: var(--gray-800);
     margin-bottom: 0.5rem;
+<<<<<<< HEAD
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -2198,12 +3073,34 @@ body {
 #contact-form textarea,
 #contact-form select {
     width: 100%;
+=======
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);}
+
+.contact-subtitle {font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-family: 'Roboto', sans-serif;
+    color: var(--gray-600);
+    opacity: 0.9;}
+
+.contact-form-container .flex.items-center {background: rgba(212, 175, 55, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;}
+
+.contact-form-container .font-semibold {color: var(--gray-800);}
+
+.contact-form-container .text-sm {color: var(--gray-600);}
+
+#contact-form input,
+#contact-form textarea,
+#contact-form select {width: 100%;
+>>>>>>> 9782bed (css arreglado)
     padding: 0.75rem;
     border: 1px solid #e5e7eb;
     border-radius: 6px;
     font-family: 'Roboto', sans-serif;
     font-size: 0.875rem;
     transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+<<<<<<< HEAD
     background: #fff;
 }
 
@@ -2223,6 +3120,21 @@ body {
 /* Enhanced CTA Buttons */
 .cta-button {
     border-radius: 8px;
+=======
+    background: #fff;}
+
+#contact-form input:focus,
+#contact-form textarea:focus,
+#contact-form select:focus {border-color: var(--gold);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+    outline: none;
+    transform: scale(1.02);}
+
+#contact-form textarea {resize: vertical;}
+
+/* Enhanced CTA Buttons */
+.cta-button {border-radius: 8px;
+>>>>>>> 9782bed (css arreglado)
     font-size: 1.3rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -2233,6 +3145,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: 1rem 1rem; /* Standardized padding for all buttons */
     width: 100%; /* Ensure consistent width */
+<<<<<<< HEAD
     text-align: center;
 }
 
@@ -2264,6 +3177,27 @@ body {
 
 .cta-button.btn-whatsapp {
     background: #25D366 !important; /* WhatsApp green */
+=======
+    text-align: center;}
+
+.cta-button:hover {transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);}
+
+.cta-button.btn-blue {background: linear-gradient(90deg, var(--blue-500), #60a5fa);
+    color: #fff;}
+
+.cta-button.btn-blue:hover {background: linear-gradient(90deg, #2563eb, #3b82f6);}
+
+.cta-button.btn-outline {border: 2px solid var(--gray-600);
+    color: var(--gray-600);
+    background: #fff;}
+
+.cta-button.btn-outline:hover {border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(65, 85, 66, 0.1);}
+
+.cta-button.btn-whatsapp {background: #25D366 !important; /* WhatsApp green */
+>>>>>>> 9782bed (css arreglado)
     color: #fff;
     border: none;
     padding: 1rem 2rem; /* Match padding with other buttons */
@@ -2274,6 +3208,7 @@ body {
     padding: 0.5rem 0.5rem; /* Standardized padding for all buttons */
     width: 100%; /* Ensure consistent width */
     font-weight: 10;
+<<<<<<< HEAD
     text-transform: uppercase;
 }
 
@@ -2311,12 +3246,41 @@ body {
     .cta-button-group {
         gap: 0.5rem; /* Reduce gap further */
     }
+=======
+    text-transform: uppercase;}
+
+.cta-button.btn-whatsapp:hover {background: #1EBE55; /* Slightly darker green for hover */}
+
+/* Button Group for Spacing */
+.cta-button-group {display: flex;
+    gap: 1rem; /* Add space between buttons */
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: 1.5rem; /* Add spacing above the group */}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {.cta-button {
+        font-size: 0.875rem; /* Slightly smaller font size */
+        padding: 0.75rem 1.5rem; /* Adjust padding */}
+
+.cta-button-group {flex-direction: column; /* Stack buttons vertically */
+        gap: 0.75rem; /* Reduce gap between buttons */}
+
+}
+
+@media (max-width: 480px) {.cta-button {
+        font-size: 0.75rem; /* Smaller font size for very small screens */
+        padding: 0.5rem 1rem; /* Adjust padding */}
+
+.cta-button-group {gap: 0.5rem; /* Reduce gap further */}
+
+>>>>>>> 9782bed (css arreglado)
 }
 
 /* ==========================================================================
    Accessibility
    ========================================================================== */
 /* High Contrast Mode */
+<<<<<<< HEAD
 @media (prefers-contrast: high) {
     .property-hero-overlay {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));
@@ -2344,6 +3308,27 @@ body {
 /* Reduced Motion Preference */
 @media (prefers-reduced-motion: reduce) {
     .property-hero-overlay,
+=======
+@media (prefers-contrast: high) {.property-hero-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7));}
+
+.property-hero-content h1,
+    .property-hero-content .subtitle,
+    .property-hero-content .location,
+    .property-hero-details .price-over-image,
+    .property-hero-details .details-over-image {color: #fff;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);}
+
+.contact-form-container {background: #fff;
+        border: 2px solid #000;}
+
+.cta-button {border: 2px solid #000;}
+
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {.property-hero-overlay,
+>>>>>>> 9782bed (css arreglado)
     .property-label,
     .property-hero-content h1,
     .property-hero-actions button,
@@ -2355,10 +3340,16 @@ body {
     #contact-form select,
     .cta-button {
         transition: none;
+<<<<<<< HEAD
         animation: none;
     }
 
     .property-label:hover,
+=======
+        animation: none;}
+
+.property-label:hover,
+>>>>>>> 9782bed (css arreglado)
     .property-hero-content h1:hover,
     .property-section:hover,
     .gallery-slide:hover,
@@ -2366,9 +3357,14 @@ body {
     #contact-form input:focus,
     #contact-form textarea:focus,
     #contact-form select:focus,
+<<<<<<< HEAD
     .cta-button:hover {
         transform: none;
     }
+=======
+    .cta-button:hover {transform: none;}
+
+>>>>>>> 9782bed (css arreglado)
 }
 
 /* ==========================================================================
@@ -2376,6 +3372,7 @@ body {
    ========================================================================== */
 
 /* Tablets and smaller screens (below 768px) */
+<<<<<<< HEAD
 @media (max-width: 768px) {
     .property-detail-hero {
         height: clamp(450px, 60vh, 600px); /* Adjusted for smaller screens */
@@ -2582,11 +3579,139 @@ body {
         padding: 0.5rem 1rem;
         font-size: 0.75rem;
     }
+=======
+@media (max-width: 768px) {.property-detail-hero {
+        height: clamp(450px, 60vh, 600px); /* Adjusted for smaller screens */}
+
+.property-hero-overlay {padding: clamp(1.5rem, 3vw, 2rem);}
+
+.property-hero-content h1 {font-size: clamp(2rem, 4vw, 2.5rem);
+        margin-bottom: 0.75rem;}
+
+.property-hero-content .subtitle {font-size: clamp(1rem, 2vw, 1.25rem);
+        margin-bottom: 0.75rem;}
+
+.property-hero-content .location {font-size: clamp(0.875rem, 1.5vw, 1rem);
+        margin-bottom: 1rem;}
+
+.property-hero-details {bottom: 1.5rem;
+        left: 1.5rem;}
+
+.property-hero-details .price-over-image {font-size: clamp(1.5rem, 3vw, 2rem);
+        margin-bottom: 0.75rem;}
+
+.property-hero-details .details-over-image {font-size: clamp(0.875rem, 1.5vw, 1rem);}
+
+.property-hero-actions {top: 1rem;
+        right: 1rem;
+        gap: 0.5rem;}
+
+.property-hero-actions button {padding: 0.5rem;}
+
+.gallery-slide {width: 300px;
+        height: 200px;}
+
+.cta-button-uniform {padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;}
+
+}
+
+/* Mobile phones (below 640px) */
+@media (max-width: 640px) {.property-detail-hero {
+        height: clamp(350px, 50vh, 450px);}
+
+.property-hero-overlay {padding: clamp(1rem, 2vw, 1.5rem);}
+
+.property-hero-content h1 {font-size: clamp(1.5rem, 3.5vw, 2rem);
+        margin-bottom: 0.5rem;}
+
+.property-hero-content .subtitle {font-size: clamp(0.875rem, 1.5vw, 1rem);
+        margin-bottom: 0.5rem;}
+
+.property-hero-content .location {font-size: clamp(0.75rem, 1.25vw, 0.875rem);
+        margin-bottom: 0.75rem;}
+
+.property-hero-details {bottom: 1rem;
+        left: 1rem;}
+
+.property-hero-details .price-over-image {font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        margin-bottom: 0.5rem;}
+
+.property-hero-details .details-over-image {font-size: clamp(0.75rem, 1.25vw, 0.875rem);}
+
+.property-hero-actions button {padding: 0.4rem;}
+
+.property-section,
+    .contact-form-container {padding: clamp(1rem, 2vw, 1.5rem);}
+
+.section-title {font-size: clamp(1.25rem, 2.5vw, 1.5rem);}
+
+.contact-title {font-size: clamp(1.25rem, 2.5vw, 1.5rem);}
+
+.contact-subtitle {font-size: clamp(0.75rem, 1.25vw, 0.875rem);}
+
+.property-table th,
+    .property-table td {padding: clamp(0.5rem, 1vw, 0.75rem);
+        font-size: clamp(0.75rem, 1.25vw, 0.875rem);}
+
+.amenities-details p,
+    .overview-details p,
+    .location-details p {font-size: clamp(0.75rem, 1.25vw, 0.875rem);}
+
+.amenities-details p i,
+    .overview-details p i,
+    .location-details p i {font-size: 1rem;}
+
+.gallery-slide {width: 250px;
+        height: 160px;}
+
+.cta-button-uniform {padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;}
+
+}
+
+/* Very small screens (below 480px) */
+@media (max-width: 480px) {.property-detail-hero {
+        height: clamp(300px, 40vh, 400px);}
+
+.property-hero-overlay {padding: clamp(0.75rem, 1.5vw, 1rem);}
+
+.property-hero-content h1 {font-size: clamp(1.25rem, 3vw, 1.5rem);
+        margin-bottom: 0.5rem;}
+
+.property-hero-content .subtitle {font-size: clamp(0.75rem, 1.25vw, 0.875rem);
+        margin-bottom: 0.5rem;}
+
+.property-hero-content .location {font-size: clamp(0.625rem, 1vw, 0.75rem);
+        margin-bottom: 0.5rem;}
+
+.property-hero-details {bottom: 0.75rem;
+        left: 0.75rem;}
+
+.property-hero-details .price-over-image {font-size: clamp(1rem, 2vw, 1.25rem);
+        margin-bottom: 0.5rem;}
+
+.property-hero-details .details-over-image {font-size: clamp(0.625rem, 1vw, 0.75rem);}
+
+.property-hero-actions {top: 0.75rem;
+        right: 0.75rem;
+        gap: 0.4rem;}
+
+.property-hero-actions button {padding: 0.3rem;}
+
+.gallery-slide {width: 200px;
+        height: 120px;}
+
+.cta-button-uniform {padding: 0.5rem 1rem;
+        font-size: 0.75rem;}
+
+>>>>>>> 9782bed (css arreglado)
 }
 /* ==========================================================================
    Accessibility
    ========================================================================== */
 /* High Contrast Mode */
+<<<<<<< HEAD
 @media (prefers-contrast: high) {
     .property-hero-overlay {
         background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
@@ -2614,6 +3739,15 @@ body {
 /* Reduced Motion Preference */
 @media (prefers-reduced-motion: reduce) {
     .property-detail-hero img,
+=======
+@media (prefers-contrast: high) {.property-hero-overlay {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));}
+
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {.property-detail-hero img,
+>>>>>>> 9782bed (css arreglado)
     .property-hero-overlay,
     .property-label,
     .property-hero-content h1,
@@ -2626,10 +3760,16 @@ body {
     #contact-form select,
     .cta-button {
         transition: none;
+<<<<<<< HEAD
         animation: none;
     }
 
     .property-detail-hero:hover img,
+=======
+        animation: none;}
+
+.property-detail-hero:hover img,
+>>>>>>> 9782bed (css arreglado)
     .property-label:hover,
     .property-hero-content h1:hover,
     .property-section:hover,
@@ -2638,9 +3778,14 @@ body {
     #contact-form input:focus,
     #contact-form textarea:focus,
     #contact-form select:focus,
+<<<<<<< HEAD
     .cta-button:hover {
         transform: none;
     }
+=======
+    .cta-button:hover {transform: none;}
+
+>>>>>>> 9782bed (css arreglado)
 }
 
 /* ==========================================================================
@@ -2648,6 +3793,7 @@ body {
    ========================================================================== */
 
 /* Tablets and smaller screens (below 768px) */
+<<<<<<< HEAD
 @media (max-width: 768px) {
     .property-detail-hero {
         height: clamp(350px, 50vh, 450px);
@@ -2844,10 +3990,56 @@ body {
         padding: 0.5rem 1rem;
         font-size: 0.75rem;
     }
+=======
+@media (max-width: 768px) {.property-detail-hero {
+        height: clamp(350px, 50vh, 450px);
+        margin-bottom: 0.25rem;}
+
+.property-hero-content h1 {font-size: clamp(2rem, 4vw, 2.5rem);}
+
+.property-hero-content .subtitle {font-size: clamp(1rem, 2vw, 1.25rem);}
+
+.property-hero-content .location {font-size: clamp(0.875rem, 1.5vw, 1rem);}
+
+.property-hero-details .price-over-image {font-size: clamp(1.5rem, 3vw, 2rem);}
+
+}
+
+/* Mobile phones (below 640px) */
+@media (max-width: 640px) {.property-detail-hero {
+        height: clamp(250px, 40vh, 350px);
+        margin-bottom: 0.25rem;}
+
+.property-hero-content h1 {font-size: clamp(1.5rem, 3.5vw, 2rem);}
+
+.property-hero-content .subtitle {font-size: clamp(0.875rem, 1.5vw, 1rem);}
+
+.property-hero-content .location {font-size: clamp(0.75rem, 1.25vw, 0.875rem);}
+
+.property-hero-details .price-over-image {font-size: clamp(1.25rem, 2.5vw, 1.5rem);}
+
+}
+
+/* Very small screens (below 480px) */
+@media (max-width: 480px) {.property-detail-hero {
+        height: clamp(200px, 35vh, 300px);}
+
+.property-hero-overlay {padding: clamp(0.5rem, 1vw, 0.75rem);}
+
+.property-hero-content h1 {font-size: clamp(1.25rem, 3vw, 1.5rem);}
+
+.property-hero-content .subtitle {font-size: clamp(0.75rem, 1.25vw, 0.875rem);}
+
+.property-hero-content .location {font-size: clamp(0.625rem, 1vw, 0.75rem);}
+
+.property-hero-details .price-over-image {font-size: clamp(1rem, 2vw, 1.25rem);}
+
+>>>>>>> 9782bed (css arreglado)
 }
 /* ==========================================================================
    Blog Post (blog_post.html)
    ========================================================================== */
+<<<<<<< HEAD
 .blog-post-content {
     background: var(--white);
     padding: 2rem;
@@ -2870,6 +4062,22 @@ body {
     font-size: 1rem;
     line-height: 1.7;
 }
+=======
+.blog-post-content {background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);}
+
+.blog-post-content h1 {font-size: 2rem;
+    margin-bottom: 1rem;}
+
+.blog-post-content .date {color: var(--gray-600);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;}
+
+.blog-post-content .content {font-size: 1rem;
+    line-height: 1.7;}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    About (about.html)
@@ -2879,6 +4087,7 @@ body {
    ========================================================================== */
 
 /* CSS Custom Properties for Theming */
+<<<<<<< HEAD
 :root {
     --cream: #f9f5e7;
     --charcoal: #2d2d2d;
@@ -2903,6 +4112,17 @@ body {
 /* Section Titles */
 .section-title {
     font-size: clamp(2rem, 4.5vw, 3rem);
+=======
+
+
+/* General Container */
+.container {max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;}
+
+/* Section Titles */
+.section-title {font-size: clamp(2rem, 4.5vw, 3rem);
+>>>>>>> 9782bed (css arreglado)
     font-family: 'cormorant garamond', serif;
     font-weight: 700;
     color: var(--charcoal);
@@ -2910,22 +4130,34 @@ body {
     margin-bottom: 2.5rem;
     letter-spacing: 0.05em;
     position: relative;
+<<<<<<< HEAD
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .section-title::after {
     content: '';
+=======
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);}
+
+.section-title::after {content: '';
+>>>>>>> 9782bed (css arreglado)
     position: absolute;
     bottom: -0.5rem;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
+<<<<<<< HEAD
     background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 .section-text {
     font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
+=======
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);}
+
+.section-text {font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Poppins', sans-serif;
     color: var(--gray-600);
     line-height: 1.8;
@@ -2933,6 +4165,7 @@ body {
     text-align: center;
     max-width: 900px;
     margin-left: auto;
+<<<<<<< HEAD
     margin-right: auto;
 }
 
@@ -2970,6 +4203,28 @@ body {
 /* Hero Section with Enhanced Title Background */
 .about-hero {
     position: relative;
+=======
+    margin-right: auto;}
+
+/* Reveal Animation for Scroll Effects */
+.reveal {opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;}
+
+/* Timeline Reveal Animation */
+.reveal-timeline {opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;}
+
+.reveal-timeline[data-side="left"] {transform: translateX(-50px);}
+
+.reveal-timeline[data-side="right"] {transform: translateX(50px);}
+
+.reveal-timeline.active {opacity: 1;
+    transform: translateX(0);}
+
+/* Hero Section with Enhanced Title Background */
+.about-hero {position: relative;
+>>>>>>> 9782bed (css arreglado)
     height: 500px;
     display: flex;
     align-items: center;
@@ -2979,12 +4234,18 @@ body {
     margin-top: 60px; /* Account for fixed navbar */
     margin-bottom: var(--section-margin); /* Clear margin below */
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(255, 255, 255, 0.95)), url('/static/images/about-hero-bg.jpg') center/cover no-repeat;
+<<<<<<< HEAD
     background-attachment: fixed; /* Parallax effect */
 }
 
 
 .hero-content::before {
     content: '';
+=======
+    background-attachment: fixed; /* Parallax effect */}
+
+.hero-content::before {content: '';
+>>>>>>> 9782bed (css arreglado)
     position: absolute;
     top: 0;
     left: 0;
@@ -2992,21 +4253,33 @@ body {
     height: 100%;
     background: url('/static/images/subtle-pattern.png') repeat;
     opacity: 0.1;
+<<<<<<< HEAD
     pointer-events: none;
 }
 
 .hero-content::after {
     content: '';
+=======
+    pointer-events: none;}
+
+.hero-content::after {content: '';
+>>>>>>> 9782bed (css arreglado)
     position: absolute;
     top: -50%;
     left: -50%;
     width: 200%;
     height: 200%;
+<<<<<<< HEAD
     opacity: 0.3;
 }
 
 .hero-title {
     font-size: clamp(2.5rem, 5.5vw, 3.5rem);
+=======
+    opacity: 0.3;}
+
+.hero-title {font-size: clamp(2.5rem, 5.5vw, 3.5rem);
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     margin-bottom: 0.75rem;
@@ -3016,15 +4289,22 @@ body {
     background: linear-gradient(90deg, var(--charcoal), var(--gold));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+<<<<<<< HEAD
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .hero-subtitle {
     font-size: clamp(1rem, 2vw, 1.25rem);
+=======
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);}
+
+.hero-subtitle {font-size: clamp(1rem, 2vw, 1.25rem);
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Roboto', sans-serif;
     color: var(--gray-600);
     line-height: 1.6;
     position: relative;
+<<<<<<< HEAD
     z-index: 1;
 }
 
@@ -3039,6 +4319,18 @@ body {
 
 .about-story::before {
     content: '';
+=======
+    z-index: 1;}
+
+/* Enhanced Our Story Section with Timeline */
+.about-story {padding: 5rem 0;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: var(--section-margin); /* Clear margin below */}
+
+.about-story::before {content: '';
+>>>>>>> 9782bed (css arreglado)
     position: absolute;
     top: 0;
     left: 0;
@@ -3046,11 +4338,17 @@ body {
     height: 100%;
     background: url('/static/images/pattern-bg.png') repeat;
     opacity: 0.05;
+<<<<<<< HEAD
     pointer-events: none;
 }
 
 .about-story::after {
     content: '';
+=======
+    pointer-events: none;}
+
+.about-story::after {content: '';
+>>>>>>> 9782bed (css arreglado)
     position: absolute;
     top: 0;
     left: 0;
@@ -3058,6 +4356,7 @@ body {
     height: 100%;
     background: linear-gradient(45deg, var(--gold-light), transparent);
     opacity: 0.1;
+<<<<<<< HEAD
     animation: wave 20s linear infinite;
 }
 
@@ -3084,6 +4383,26 @@ body {
 
 .timeline::before {
     content: '';
+=======
+    animation: wave 20s linear infinite;}
+
+@keyframes wave {0% {
+        transform: translateX(-100%);}
+
+100% {transform: translateX(100%);}
+
+}
+
+.about-story .intro-text {margin-bottom: 3rem;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-style: italic;}
+
+.timeline {position: relative;
+    max-width: 800px;
+    margin: 0 auto;}
+
+.timeline::before {content: '';
+>>>>>>> 9782bed (css arreglado)
     position: absolute;
     top: 0;
     left: 50%;
@@ -3091,6 +4410,7 @@ body {
     width: 4px;
     height: 100%;
     background: linear-gradient(to bottom, var(--gold), var(--charcoal));
+<<<<<<< HEAD
     border-radius: 2px;
 }
 
@@ -3117,11 +4437,30 @@ body {
 
 .timeline-card {
     background: #fff;
+=======
+    border-radius: 2px;}
+
+.timeline-item {position: relative;
+    margin-bottom: 2rem;
+    width: 50%;}
+
+.timeline-item[data-side="left"] {left: 0;
+    text-align: right;}
+
+.timeline-item[data-side="right"] {left: 50%;
+    text-align: left;}
+
+.timeline-content {position: relative;
+    padding: 0 2rem;}
+
+.timeline-card {background: #fff;
+>>>>>>> 9782bed (css arreglado)
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     border: 1px solid var(--gold-light);
     padding: 1.5rem;
     cursor: pointer;
+<<<<<<< HEAD
     transition: var(--transition);
 }
 
@@ -3144,22 +4483,45 @@ body {
 
 .timeline-year {
     font-size: 1.25rem;
+=======
+    transition: var(--transition);}
+
+.timeline-card:hover {transform: scale(1.03);
+    box-shadow: var(--shadow-hover);}
+
+.timeline-card:focus {outline: 3px solid var(--gold);
+    outline-offset: 2px;}
+
+.timeline-card-header {display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;}
+
+.timeline-year {font-size: 1.25rem;
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: var(--charcoal);
     background: var(--gold-light);
     padding: 0.25rem 0.75rem;
+<<<<<<< HEAD
     border-radius: 6px;
 }
 
 .timeline-card-title {
     font-size: 1.125rem;
+=======
+    border-radius: 6px;}
+
+.timeline-card-title {font-size: 1.125rem;
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: var(--charcoal);
     background: linear-gradient(90deg, var(--charcoal), var(--gold));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+<<<<<<< HEAD
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -3177,11 +4539,25 @@ body {
 
 .timeline-card-details {
     max-height: 0;
+=======
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);}
+
+.timeline-card-body {overflow: hidden;}
+
+.timeline-card-preview {font-size: 0.9375rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--gray-600);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;}
+
+.timeline-card-details {max-height: 0;
+>>>>>>> 9782bed (css arreglado)
     opacity: 0;
     transition: max-height 0.5s ease, opacity 0.3s ease;
     font-size: 0.875rem;
     font-family: 'Roboto', sans-serif;
     color: var(--gray-600);
+<<<<<<< HEAD
     line-height: 1.6;
 }
 
@@ -3193,6 +4569,15 @@ body {
 /* Timeline Marker */
 .timeline-content::before {
     content: '';
+=======
+    line-height: 1.6;}
+
+.timeline-card[aria-expanded="true"] .timeline-card-details {max-height: 200px; /* Adjust based on content */
+    opacity: 1;}
+
+/* Timeline Marker */
+.timeline-content::before {content: '';
+>>>>>>> 9782bed (css arreglado)
     position: absolute;
     top: 1.5rem;
     width: 16px;
@@ -3200,6 +4585,7 @@ body {
     background: var(--gold);
     border: 3px solid var(--charcoal);
     border-radius: 50%;
+<<<<<<< HEAD
     z-index: 1;
 }
 
@@ -3227,6 +4613,25 @@ body {
 
 .team-member {
     text-align: center;
+=======
+    z-index: 1;}
+
+.timeline-item[data-side="left"] .timeline-content::before {right: -8px;}
+
+.timeline-item[data-side="right"] .timeline-content::before {left: -8px;}
+
+/* Team Section */
+.about-team {padding: 5rem 0;
+    background: #fff;
+    margin-bottom: var(--section-margin); /* Clear margin below */}
+
+.team-grid {display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    justify-items: center;}
+
+.team-member {text-align: center;
+>>>>>>> 9782bed (css arreglado)
     background: var(--cream);
     padding: 2rem;
     border-radius: var(--border-radius);
@@ -3234,6 +4639,7 @@ body {
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+<<<<<<< HEAD
     border: 1px solid var(--gold-light);
 }
 
@@ -3244,6 +4650,14 @@ body {
 
 .team-member::before {
     content: '';
+=======
+    border: 1px solid var(--gold-light);}
+
+.team-member:hover {transform: scale(1.03);
+    box-shadow: var(--shadow-hover);}
+
+.team-member::before {content: '';
+>>>>>>> 9782bed (css arreglado)
     position: absolute;
     top: 0;
     left: 0;
@@ -3251,6 +4665,7 @@ body {
     height: 100%;
     background: linear-gradient(135deg, var(--gold-light), transparent);
     opacity: 0;
+<<<<<<< HEAD
     transition: var(--transition);
 }
 
@@ -3260,11 +4675,19 @@ body {
 
 .team-photo {
     width: 160px;
+=======
+    transition: var(--transition);}
+
+.team-member:hover::before {opacity: 0.3;}
+
+.team-photo {width: 160px;
+>>>>>>> 9782bed (css arreglado)
     height: 160px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1.25rem;
     border: 4px solid var(--gold);
+<<<<<<< HEAD
     transition: var(--transition);
 }
 
@@ -3274,10 +4697,18 @@ body {
 
 .team-name {
     font-size: 1.375rem;
+=======
+    transition: var(--transition);}
+
+.team-member:hover .team-photo {transform: rotate(5deg);}
+
+.team-name {font-size: 1.375rem;
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: var(--charcoal);
     margin-bottom: 0.25rem;
+<<<<<<< HEAD
     letter-spacing: 0.02em;
 }
 
@@ -3312,12 +4743,39 @@ body {
 
 .value-item {
     text-align: center;
+=======
+    letter-spacing: 0.02em;}
+
+.team-role {font-size: 0.9375rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--gray-600);
+    margin-bottom: 0.75rem;
+    font-style: italic;}
+
+.team-bio {font-size: 0.875rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--gray-600);
+    line-height: 1.6;}
+
+/* Values Section */
+.about-values {padding: 5rem 0;
+    background: var(--cream);
+    margin-bottom: var(--section-margin); /* Clear margin below */}
+
+.values-grid {display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;}
+
+.value-item {text-align: center;
+>>>>>>> 9782bed (css arreglado)
     padding: 2rem;
     background: #fff;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     transition: var(--transition);
     position: relative;
+<<<<<<< HEAD
     border: 1px solid var(--gold-light);
 }
 
@@ -3340,10 +4798,27 @@ body {
 
 .value-title {
     font-size: 1.25rem;
+=======
+    border: 1px solid var(--gold-light);}
+
+.value-item:hover {transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);}
+
+.value-icon {font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+    transition: var(--transition);}
+
+.value-item:hover .value-icon {transform: scale(1.1);
+    color: var(--charcoal);}
+
+.value-title {font-size: 1.25rem;
+>>>>>>> 9782bed (css arreglado)
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: var(--charcoal);
     margin-bottom: 0.75rem;
+<<<<<<< HEAD
     letter-spacing: 0.02em;
 }
 
@@ -3357,22 +4832,40 @@ body {
 /* Call to Action Section */
 .about-cta {
     padding: 5rem 0;
+=======
+    letter-spacing: 0.02em;}
+
+.value-text {font-size: 0.875rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--gray-600);
+    line-height: 1.6;}
+
+/* Call to Action Section */
+.about-cta {padding: 5rem 0;
+>>>>>>> 9782bed (css arreglado)
     background: linear-gradient(135deg, var(--gold), var(--charcoal));
     color: #fff;
     text-align: center;
     position: relative;
     overflow: hidden;
+<<<<<<< HEAD
     margin-bottom: var(--section-margin); /* Clear margin below */
 }
 
 .about-cta::before {
     content: '';
+=======
+    margin-bottom: var(--section-margin); /* Clear margin below */}
+
+.about-cta::before {content: '';
+>>>>>>> 9782bed (css arreglado)
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+<<<<<<< HEAD
     pointer-events: none;
 }
 
@@ -3408,12 +4901,39 @@ body {
     box-shadow: var(--shadow);
     border: 1px solid var(--gold-light);
 }
+=======
+    pointer-events: none;}
+
+.about-cta .section-title {color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);}
+
+.about-cta .section-text {color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;}
+
+.cta-buttons {display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    flex-wrap: wrap;}
+
+/* Map Section with Iframe */
+.about-map {padding: 5rem 0;
+    background: #fff;
+    margin-bottom: var(--section-margin); /* Clear margin below */}
+
+.map-iframe {width: 100%;
+    height: 450px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gold-light);}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    Responsiveness
    ========================================================================== */
 
 /* Tablets (below 768px) */
+<<<<<<< HEAD
 @media (max-width: 768px) {
     .about-hero {
         height: 400px;
@@ -3579,6 +5099,107 @@ body {
     .timeline-card-preview {
         font-size: 0.875rem;
     }
+=======
+@media (max-width: 768px) {.about-hero {
+        height: 400px;
+        margin-top: 48px; /* Adjust for smaller navbar height on mobile */
+        margin-bottom: clamp(2rem, 4vw, 3rem); /* Responsive margin */
+        background-attachment: scroll; /* Disable parallax on mobile */}
+
+.hero-title {font-size: clamp(2rem, 4vw, 2.5rem);}
+
+.hero-subtitle {font-size: clamp(0.875rem, 1.5vw, 1rem);}
+
+.team-grid,
+    .values-grid {grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.75rem;}
+
+.team-photo {width: 140px;
+        height: 140px;}
+
+.about-story,
+    .about-team,
+    .about-values,
+    .about-cta,
+    .about-map {padding: 3rem 0;
+        margin-bottom: clamp(2rem, 4vw, 3rem); /* Responsive margin */}
+
+.map-iframe {height: 400px;}
+
+.timeline::before {left: 2rem;}
+
+.timeline-item {width: 100%;
+        left: 0 !important;
+        text-align: left;}
+
+.timeline-content {padding: 0 0 0 4rem;}
+
+.timeline-content::before {left: 1rem !important;
+        right: auto !important;}
+
+.timeline-card-header {flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;}
+
+}
+
+/* Mobile (below 640px) */
+@media (max-width: 640px) {.about-hero {
+        height: 350px;}
+
+.hero-title {font-size: clamp(1.75rem, 3.5vw, 2.25rem);}
+
+.hero-subtitle {font-size: clamp(0.8125rem, 1.2vw, 0.9375rem);}
+
+.team-grid,
+    .values-grid {grid-template-columns: 1fr;
+        gap: 1.25rem;}
+
+.team-photo {width: 120px;
+        height: 120px;}
+
+.team-member,
+    .value-item {padding: 1.5rem;}
+
+.cta-buttons {flex-direction: column;
+        gap: 0.75rem;}
+
+.cta-button {width: 100%;
+        padding: 0.875rem 1.75rem;}
+
+.map-iframe {height: 350px;}
+
+.timeline-content {padding: 0 0 0 3rem;}
+
+.timeline-content::before {left: 0.5rem !important;}
+
+.timeline-card {padding: 1rem;}
+
+}
+
+/* Very Small Screens (below 480px) */
+@media (max-width: 480px) {.hero-title {
+        font-size: clamp(1.5rem, 3vw, 2rem);}
+
+.hero-subtitle {font-size: clamp(0.75rem, 1vw, 0.875rem);}
+
+.team-photo {width: 100px;
+        height: 100px;}
+
+.team-member,
+    .value-item {padding: 1.25rem;}
+
+.value-icon {font-size: 2rem;}
+
+.map-iframe {height: 300px;}
+
+.timeline-year {font-size: 1rem;}
+
+.timeline-card-title {font-size: 1rem;}
+
+.timeline-card-preview {font-size: 0.875rem;}
+
+>>>>>>> 9782bed (css arreglado)
 }
 
 /* ==========================================================================
@@ -3586,6 +5207,7 @@ body {
    ========================================================================== */
 
 /* High Contrast Mode */
+<<<<<<< HEAD
 @media (prefers-contrast: high) {
     .about-hero {
         background: #fff;
@@ -3611,12 +5233,34 @@ body {
     }
 
     .section-text,
+=======
+@media (prefers-contrast: high) {.about-hero {
+        background: #fff;}
+
+.hero-content,
+    .team-member,
+    .value-item,
+    .about-cta,
+    .timeline-card {border: 2px solid #000;
+        background: #fff;}
+
+.section-title,
+    .hero-title,
+    .team-name,
+    .value-title,
+    .timeline-card-title {color: #000;
+        background: none;
+        -webkit-text-fill-color: #000;}
+
+.section-text,
+>>>>>>> 9782bed (css arreglado)
     .hero-subtitle,
     .team-role,
     .team-bio,
     .value-text,
     .timeline-year,
     .timeline-card-preview,
+<<<<<<< HEAD
     .timeline-card-details {
         color: #000;
     }
@@ -3657,6 +5301,32 @@ body {
 /* Reduced Motion Preference */
 @media (prefers-reduced-motion: reduce) {
     .reveal,
+=======
+    .timeline-card-details {color: #000;}
+
+.about-cta .section-title,
+    .about-cta .section-text {color: #000;}
+
+.value-icon {color: #000;}
+
+.team-photo {border-color: #000;}
+
+.cta-button:focus,
+    .timeline-card:focus {outline: 3px solid #000;
+        outline-offset: 3px;}
+
+.map-iframe {border: 2px solid #000;}
+
+.timeline::before {background: #000;}
+
+.timeline-content::before {background: #000;
+        border-color: #fff;}
+
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {.reveal,
+>>>>>>> 9782bed (css arreglado)
     .reveal-timeline,
     .team-member,
     .team-photo,
@@ -3667,6 +5337,7 @@ body {
     .timeline-card,
     .about-story::after {
         transition: none;
+<<<<<<< HEAD
         animation: none;
     }
 
@@ -3690,11 +5361,27 @@ body {
     .timeline-card-details {
         transition: none;
     }
+=======
+        animation: none;}
+
+.hero-content::after {animation: none;}
+
+.reveal.active,
+    .reveal-timeline.active {transform: none;}
+
+.about-hero {background-attachment: scroll;}
+
+.team-member:hover::before {opacity: 0;}
+
+.timeline-card-details {transition: none;}
+
+>>>>>>> 9782bed (css arreglado)
 }
 
 /* ==========================================================================
    Contact (contact.html)
    ========================================================================== */
+<<<<<<< HEAD
 .contact {
     padding: 4rem 0;
     background: var(--white);
@@ -3706,10 +5393,20 @@ body {
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
 }
+=======
+.contact {padding: 4rem 0;
+    background: var(--white);}
+
+.contact-form-container {background: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    New Post (new_post.html)
    ========================================================================== */
+<<<<<<< HEAD
 .new-post {
     padding: 4rem 0;
     background: var(--white);
@@ -3717,10 +5414,17 @@ body {
 
 .form-container {
     max-width: 800px;
+=======
+.new-post {padding: 4rem 0;
+    background: var(--white);}
+
+.form-container {max-width: 800px;
+>>>>>>> 9782bed (css arreglado)
     margin: 0 auto;
     background: var(--white);
     padding: 2rem;
     border-radius: var(--border-radius);
+<<<<<<< HEAD
     box-shadow: var(--shadow);
 }
 
@@ -3736,10 +5440,21 @@ body {
 .form-container button:hover {
     background: var(--blue-600);
 }
+=======
+    box-shadow: var(--shadow);}
+
+.form-container h1 {font-size: 2rem;
+    margin-bottom: 1.5rem;}
+
+.form-container button {background: var(--blue-500);}
+
+.form-container button:hover {background: var(--blue-600);}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    Admin (admin_properties.html, admin_property.html)
    ========================================================================== */
+<<<<<<< HEAD
 .admin-properties, .admin-property {
     padding: 4rem 0;
     background: var(--white);
@@ -3754,10 +5469,22 @@ body {
 
 .admin-properties table {
     width: 100%;
+=======
+.admin-properties, .admin-property {padding: 4rem 0;
+    background: var(--white);}
+
+.admin-properties h1, .admin-property h1 {font-size: 2.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 2rem;
+    text-align: center;}
+
+.admin-properties table {width: 100%;
+>>>>>>> 9782bed (css arreglado)
     border-collapse: collapse;
     background: var(--white);
     box-shadow: var(--shadow);
     border-radius: var(--border-radius);
+<<<<<<< HEAD
     overflow: hidden;
 }
 
@@ -3790,10 +5517,33 @@ body {
 
 .admin-property form {
     max-width: 800px;
+=======
+    overflow: hidden;}
+
+.admin-properties th, .admin-properties td {padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;}
+
+.admin-properties th {background: var(--gradient-luxe);
+    color: var(--white);
+    font-weight: 600;}
+
+.admin-properties tr:hover {background: var(--light-gray);}
+
+.admin-properties a {color: var(--blue-500);
+    font-weight: 600;
+    transition: var(--transition);}
+
+.admin-properties a:hover {color: var(--blue-600);
+    text-decoration: underline;}
+
+.admin-property form {max-width: 800px;
+>>>>>>> 9782bed (css arreglado)
     margin: 0 auto;
     background: var(--white);
     padding: 2rem;
     border-radius: var(--border-radius);
+<<<<<<< HEAD
     box-shadow: var(--shadow);
 }
 
@@ -3808,10 +5558,22 @@ body {
     padding: 1rem;
     font-size: 1.25rem;
 }
+=======
+    box-shadow: var(--shadow);}
+
+.admin-property .form-group img {max-width: 150px;
+    border-radius: var(--border-radius);
+    margin-top: 0.5rem;}
+
+.admin-property .btn {width: 100%;
+    padding: 1rem;
+    font-size: 1.25rem;}
+>>>>>>> 9782bed (css arreglado)
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
+<<<<<<< HEAD
 @media (min-width: 768px) {
     .md\:text-4xl {
         font-size: 2.25rem;
@@ -3833,12 +5595,28 @@ body {
 
     .nav-menu {
         flex-direction: column;
+=======
+@media (min-width: 768px) {.md\:text-4xl {
+        font-size: 2.25rem;}
+
+.md\:text-5xl {font-size: 3rem;}
+
+}
+
+@media (max-width: 768px) {.hero-content h1 {
+        font-size: 2.5rem;}
+
+.section-title {font-size: 1.25rem;}
+
+.nav-menu {flex-direction: column;
+>>>>>>> 9782bed (css arreglado)
         background: var(--white);
         position: absolute;
         top: 60px;
         left: 0;
         width: 100%;
         padding: 1rem;
+<<<<<<< HEAD
         display: none;
     }
 
@@ -3848,10 +5626,18 @@ body {
 
     .nav-toggle {
         display: block;
+=======
+        display: none;}
+
+.nav-menu.active {display: flex;}
+
+.nav-toggle {display: block;
+>>>>>>> 9782bed (css arreglado)
         font-size: 1.5rem;
         cursor: pointer;
         position: absolute;
         right: 1rem;
+<<<<<<< HEAD
         top: 1.5rem; /* Adjusted for better alignment */
     }
 
@@ -3925,3 +5711,47 @@ body {
         height: 80px;
     }
 }
+=======
+        top: 1.5rem; /* Adjusted for better alignment */}
+
+.locations-grid {grid-template-columns: repeat(2, 1fr);}
+
+.services-grid, .types-grid {grid-template-columns: 1fr;}
+
+.featured .swiper-slide {width: 100%;}
+
+.property-detail-hero {height: 300px;}
+
+.property-hero-content h1 {font-size: 1.5rem;}
+
+.property-hero-content .price {font-size: 1rem;}
+
+.property-table {display: block;
+        overflow-x: auto;}
+
+}
+
+@media (max-width: 640px) {.locations-grid {
+        grid-template-columns: 1fr;}
+
+.admin-properties table, 
+    .admin-properties th, 
+    .admin-properties td {display: block;
+        width: 100%;}
+
+.admin-properties th {display: none;}
+
+.admin-properties td {padding: 0.5rem;
+        border-bottom: none;}
+
+.admin-properties td::before {content: attr(data-label);
+        font-weight: 600;
+        display: inline-block;
+        width: 100px;}
+
+.gallery-grid {grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));}
+
+.gallery-image {height: 80px;}
+
+.gallery-more {height: 80px;}
+>>>>>>> 9782bed (css arreglado)

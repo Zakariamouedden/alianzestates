@@ -25,16 +25,28 @@ document.addEventListener('DOMContentLoaded', function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
+<<<<<<< HEAD
                 const staggeredElements = entry.target.querySelectorAll('.animate-stagger');
                 staggeredElements.forEach((el, index) => {
                     el.style.transitionDelay = `${index * 0.3}s`;
                     el.classList.add('fadeInUp');
+=======
+                // Remove animation logic
+                const staggeredElements = entry.target.querySelectorAll('.animate-stagger');
+                staggeredElements.forEach((el) => {
+                    el.style.transitionDelay = '0s'; // No delay
+                    el.classList.remove('fadeInUp'); // Remove animation class
+>>>>>>> 9782bed (css arreglado)
                 });
                 observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.2 });
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 9782bed (css arreglado)
     revealElements.forEach(element => {
         observer.observe(element);
     });

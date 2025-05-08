@@ -9,7 +9,11 @@
     </video>
     <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); display: flex; align-items: center; justify-content: center; z-index: 2;">
         <div class="hero-content" style="text-align: center; color: #ffffff; z-index: 3; padding: 2rem;">
+<<<<<<< HEAD
             <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 5rem); font-weight: 700; letter-spacing: 2px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); color: #38bdf8;">SOMOS ALIANZ</h1>
+=======
+            <h1 style="font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 5rem); font-weight: 700; letter-spacing: 0.5px; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); color: #178aa1;">SOMOS ALIANZ,</h1>
+>>>>>>> 9782bed (css arreglado)
             <h2 style="font-family: 'Roboto', sans-serif; font-size: clamp(1.5rem, 4vw, 2.5rem); font-weight: 400; color: #ffffff; text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);">Inteligencia Inmobiliaria</h2>
         </div>
     </div>
@@ -28,6 +32,7 @@
 </section>
 
 <!-- Localizaciones Exclusivas -->
+<<<<<<< HEAD
 <section class="locations reveal" style="padding: 6rem 2rem; background: #f9f9f9; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
     <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
         <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Localizaciones Exclusivas</h2>
@@ -36,6 +41,19 @@
             <div class="location-card" style="position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.4s ease;">
                 <img src="/static/images/location-{{ loc | lower }}.jpg" alt="{{ loc }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
                 <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease;">
+=======
+<section class="locations reveal" style="padding: 2rem 2rem; background: #f9f9f9; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Localizaciones Exclusivas</h2>
+        <div class="locations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; justify-items: center;">
+            {% for loc in ['Málaga', 'Estepona', 'Fuengirola', 'Marbella', 'Mijas', 'Benahavís', 'Manilva', 'Casares', 'Sotogrande', 'Torremolinos'] %}
+            <div class="location-card" style="position: relative; aspect-ratio: 16/17; overflow: hidden; border-radius: 0px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); max-width: 220px;">
+                <div style="position: absolute; top: 0; left: 0; right: 0; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent); padding: 0.5rem; z-index: 1;">
+                    <span style="color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 600; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); display: block; text-align: center;">{{ loc }}</span>
+                </div>
+                <img src="/static/images/location-{{ loc | lower }}.jpg" alt="{{ loc }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
+                <div class="location-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); display: flex; align-items: center; justify-content: center; opacity: 0;">
+>>>>>>> 9782bed (css arreglado)
                     <span style="color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 600; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);">{{ loc }}</span>
                 </div>
             </div>
