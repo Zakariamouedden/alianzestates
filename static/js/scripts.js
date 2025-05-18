@@ -39,53 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
         observer.observe(element);
     });
 
-    // Enhanced Swiper for Propiedades Destacadas
-    const featuredSwiper = document.querySelector('.swiper');
-    if (featuredSwiper) {
-        new Swiper(featuredSwiper, {
-            slidesPerView: 'auto',
-            spaceBetween: 40,
-            loop: true,
-            centeredSlides: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    spaceBetween: 20,
-                },
-                1024: {
-                    spaceBetween: 40,
-                },
-            },
-            on: {
-                slideChangeTransitionStart: function () {
-                    const slides = this.slides;
-                    slides.forEach(slide => {
-                        slide.style.opacity = '0';
-                        slide.style.transform = 'translateY(20px)';
-                    });
-                },
-                slideChangeTransitionEnd: function () {
-                    const activeSlide = this.slides[this.activeIndex];
-                    const nextSlide = this.slides[this.activeIndex + 1] || this.slides[0];
-                    const prevSlide = this.slides[this.activeIndex - 1] || this.slides[this.slides.length - 1];
-                    [activeSlide, nextSlide, prevSlide].forEach(slide => {
-                        if (slide) {
-                            slide.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                            slide.style.opacity = '1';
-                            slide.style.transform = 'translateY(0)';
-                        }
-                    });
-                },
-            },
-        });
-    }
 
     // Property Swiper (property_detail.html)
     const propertySwiper = document.querySelector('.swiper-container.property');

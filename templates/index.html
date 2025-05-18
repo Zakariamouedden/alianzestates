@@ -28,78 +28,234 @@
 </section>
 
 <!-- Localizaciones Exclusivas -->
-<section class="locations reveal" style="padding: 6rem 2rem; background: #f9f9f9; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+<section class="locations reveal" style="padding: 2rem 2rem; background: #f9f9f9; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
+    <div class="locations-container" style="max-width: 100vw; margin: 0 auto; padding: 0;">
         <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Localizaciones Exclusivas</h2>
-        <div class="locations-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; justify-items: center;">
-            {% for loc in ['Málaga', 'Estepona', 'Fuengirola', 'Marbella', 'Mijas', 'Benahavís', 'Manilva', 'Casares', 'Sotogrande', 'Torremolinos'] %}
-            <div class="location-card" style="position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); transition: transform 0.4s ease;">
-                <img src="/static/images/location-{{ loc | lower }}.jpg" alt="{{ loc }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-                <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent); display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease;">
-                    <span style="color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 600; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);">{{ loc }}</span>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
+        <div id="locations-grid" class="locations-grid"></div>
     </div>
 </section>
+<style>
+.locations-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+@media (min-width: 1024px) {
+    .locations-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        border-radius: 0 !important;
+        gap: 1rem;
+        width: 86vw;
+        margin-left: 5vw;
+        margin-right: 8vw;
+    }
+    .location-card {
+        width: 100%;
+        aspect-ratio: 1;
+        border-radius: 0 !important;
 
-<!-- Propiedades Destacadas -->
-<section class="featured reveal" style="padding: 6rem 2rem; background: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Propiedades Destacadas</h2>
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 700;
+        color: #1e3a8a;
+        text-align: center;
+        margin-bottom: 3rem;    
+    }
+}
+@media (max-width: 1023px) {
+    .locations-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+    .location-card > div span {
+        font-size: 2rem !important;
+        width: 100%;
+        aspect-ratio: 1;
+    }
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+}
+.location-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease;
+}
+.location-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+}
+.location-card > div {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+</style>
+<script>
+const locations = ['Málaga', 'Estepona', 'Fuengirola', 'Marbella', 'Mijas', 'Benahavís', 'Manilva', 'Casares', 'Sotogrande', 'Torremolinos'];
+const grid = document.getElementById('locations-grid');
+locations.forEach(loc => {
+    const card = document.createElement('div');
+    card.className = 'location-card';
+    card.innerHTML = `
+        <img src="/static/images/location-${loc.toLowerCase()}.jpg" alt="${loc}">
+        <div>
+            <span style="color: #ffffff; font-family: 'Playfair Display', serif; font-size: clamp(1rem, 4vw, 1.5rem); font-weight: 600; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);">${loc}</span>
+        </div>
+    `;
+    grid.appendChild(card);
+});
+</script>
+
+<!-- Propiedades Destacadas (Enhanced Visuals) -->
+<section class="featured reveal" style="padding: 3rem 0.5rem 0 0.5rem; background: #f0f4f8; box-shadow: 0 4px 20px rgba(0,0,0,0.05);">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0;"></div>
+        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">
+            Propiedades Destacadas
+        </h2>
         {% if featured %}
-        <div class="swiper" style="padding-bottom: 4rem; height: 500px;">
-            <div class="swiper-wrapper" style="display: flex; transition: transform 0.8s ease;">
+        <div class="swiper enhanced-swiper" style="padding-bottom: 4rem;">
+            <div class="swiper-wrapper" style="display: flex;">
                 {% for prop in featured %}
-                <div class="swiper-slide" style="width: 400px; opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease;">
-                    <a href="{{ url_for('property_detail', id=prop[0]) }}" style="display: block; position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-decoration: none;">
-                        <img src="/static/images/property-{{ loop.index }}.jpg" alt="{{ prop[1] }}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='/static/images/default_property.jpg'">
-                        <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); color: #ffffff;">
+                <div class="swiper-slide" style="padding: 0 10px;">
+                    <a href="{{ url_for('property_detail', id=prop[0]) }}" class="property-card" style="display: flex; position: relative; overflow: hidden; border-radius: 0px; transition: transform 0.4s ease, box-shadow 0.4s ease; aspect-ratio: 16/12;">
+                        <img src="/static/images/property-{{ loop.index }}.jpg" alt="{{ prop[1] }}" style="width: 120%; height: 100%; margin-bottom: 5rem; object-fit: cover; filter: brightness(0.85); transition: transform 0.4s ease, filter 0.4s ease;" onerror="this.src='/static/images/default_property.jpg'">
+                        <div class="card-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 5rem 3rem; background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent); color: #ffffff; transition: background 0.4s ease;">
                             <h3 style="font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; margin-bottom: 0.5rem;">{{ prop[4] }}</h3>
-                            <p style="font-family: 'Roboto', sans-serif; font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 500; color: #38bdf8; margin-bottom: 0.25rem;">{{ prop[2] | format_price }}€</p>
+                            <p style="font-family: 'Roboto', sans-serif; font-size: clamp(1.2rem, 2.5vw, 1.5rem); font-weight: 700; color: #38bdf8; text-shadow: 0 2px 8px rgba(0,0,0,0.3); margin-bottom: 1rem;">{{ prop[2] | format_price }}€</p>
                             <p style="font-family: 'Roboto', sans-serif; font-size: clamp(0.9rem, 2vw, 1.125rem);">{{ prop[3] }} Hab. | {{ prop[6] }} Baños</p>
                         </div>
                     </a>
                 </div>
                 {% endfor %}
             </div>
-            <div class="swiper-button-prev" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); width: 50px; height: 50px; background: #1e3a8a; color: #ffffff; border-radius: 50%; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); transition: background 0.3s ease;"></div>
-            <div class="swiper-button-next" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 50px; height: 50px; background: #1e3a8a; color: #ffffff; border-radius: 50%; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); transition: background 0.3s ease;"></div>
+            <!-- Dots Navigation -->
+            <div class="swiper-pagination" style="position: fixed;"></div>
         </div>
         {% else %}
-        <p style="text-align: center; font-family: 'Roboto', sans-serif; font-size: 1.125rem; color: #4b5563;">No hay propiedades destacadas disponibles en este momento.</p>
+        <p style="text-align: center; font-family: 'Roboto', sans-serif; font-size: 1.125rem; color: #4b5563;">
+            No hay propiedades destacadas disponibles en este momento.
+        </p>
         {% endif %}
     </div>
 </section>
 
+<style>
+    /* Responsive adjustments for phone */
+    @media (max-width: 640px) {
+        .featured {
+            padding: 2rem 1rem;
+        }
+        .featured .container {
+            padding: 0 5rem 0rem 0rem;
+        }
+    @media (max-width: 640px) {
+        .card-overlay {
+            padding: 2rem 1rem !important;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent) !important;
+            font-size: 1rem !important;
+    }
+}
+        .swiper-pagination {
+            bottom: 10px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+        }
+        .swiper-slide {
+            padding: 0 5px;
+        }
+        .card-overlay {
+            padding: 3rem 1.5rem; /* reduce overlay padding on smaller screens */
+        }
+        .section-title {
+            font-size: clamp(2rem, 6vw, 3rem);
+        }
+    }
+</style>
+
+<script>
+    // Initialize Swiper with enhanced visual settings and dots navigation
+    const enhancedSwiperElem = document.querySelector('.enhanced-swiper');
+    if (enhancedSwiperElem) {
+        new Swiper(enhancedSwiperElem, {
+            slidesPerView: 4,
+            spaceBetween: 0,
+            loop: true,
+            autoplay: {
+                delay: 1500,
+                disableOnInteraction: false,
+            },
+            speed: 600,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                1440: { slidesPerView: 4 }
+            }
+        });
+    }
+
+    // Hover effects for property cards
+    document.querySelectorAll('.property-card').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = 'scale(1.03)';
+            card.style.boxShadow = '0 8px 20px rgba(0, 0, 0, 0.3)';
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'scale(1)';
+            card.style.boxShadow = 'none';
+        });
+    });
+</script>
+
 <!-- Filtro de Propiedades -->
-<section class="filter reveal" style="padding: 6rem 2rem; background: #f9f9f9; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Encuentra tu Propiedad Ahora</h2>
-        <form method="GET" action="{{ url_for('properties') }}" class="filter-form max-w-4xl mx-auto" style="background: #ffffff; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="location" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Ubicación</label>
-                    <select id="location" name="location" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+<section class="filter reveal" id="property-filter">
+    <div class="container">
+        <h2 class="section-title">Encuentra tu Propiedad Ahora</h2>
+        <form method="GET" action="{{ url_for('properties') }}" class="filter-form">
+            <!-- First Row: 4 Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div class="form-group">
+                    <label for="location">Ubicación</label>
+                    <select id="location" name="location">
                         <option value="">Cualquier</option>
                         {% for loc in locations %}
                         <option value="{{ loc }}">{{ loc }}</option>
                         {% endfor %}
                     </select>
                 </div>
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="type" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Tipo de Inmueble</label>
-                    <select id="type" name="type" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+                <div class="form-group">
+                    <label for="type">Tipo de Inmueble</label>
+                    <select id="type" name="type">
                         <option value="">Cualquier</option>
                         {% for t in types %}
                         <option value="{{ t }}">{{ t }}</option>
                         {% endfor %}
                     </select>
                 </div>
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="bedrooms" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Dormitorios (mínimo)</label>
-                    <select id="bedrooms" name="bedrooms" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+                <div class="form-group">
+                    <label for="bedrooms">Dormitorios (mínimo)</label>
+                    <select id="bedrooms" name="bedrooms">
                         <option value="0">Cualquier</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -107,46 +263,150 @@
                         <option value="4">4+</option>
                     </select>
                 </div>
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="bathrooms" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Baños (mínimo)</label>
-                    <select id="bathrooms" name="bathrooms" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
+                <div class="form-group">
+                    <label for="bathrooms">Baños (mínimo)</label>
+                    <select id="bathrooms" name="bathrooms">
                         <option value="0">Cualquier</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4+</option>
                     </select>
-                </div>
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="price_min" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Precio Mínimo (€)</label>
-                    <input type="number" id="price_min" name="price_min" min="0" step="10000" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
-                </div>
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="price_max" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Precio Máximo (€)</label>
-                    <input type="number" id="price_max" name="price_max" min="0" step="10000" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
-                </div>
-                <div class="form-group" style="margin-bottom: 1.5rem;">
-                    <label for="size" style="font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: 600; color: #1e3a8a; margin-bottom: 0.5rem; display: block;">Superficie Mínima (m²)</label>
-                    <input type="number" id="size" name="size" min="0" step="10" style="width: 100%; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; background: #ffffff; color: #2d3748; transition: border-color 0.3s ease;">
                 </div>
             </div>
-            <div class="text-center mt-6">
-                <button type="submit" style="background: #1e3a8a; color: #ffffff; padding: 1rem 2rem; border-radius: 8px; font-family: 'Roboto', sans-serif; font-size: 1.125rem; font-weight: 600; border: none; cursor: pointer; transition: background 0.3s ease;">Buscar Propiedades</button>
+            <!-- Second Row: 3 Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <div class="form-group">
+                    <label for="price_min">Precio Mínimo (€)</label>
+                    <input type="number" id="price_min" name="price_min" min="0" step="10000" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="price_max">Precio Máximo (€)</label>
+                    <input type="number" id="price_max" name="price_max" min="0" step="10000" placeholder="0">
+                </div>
+                <div class="form-group">
+                    <label for="size">Superficie Mínima (m²)</label>
+                    <input type="number" id="size" name="size" min="0" step="10" placeholder="m²">
+                </div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn-submit">Buscar Propiedades</button>
             </div>
         </form>
     </div>
 </section>
 
-<!-- Nuestros Servicios -->
-<section class="services reveal my-12" style="padding: 6rem 2rem; background: #ffffff; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Nuestros Servicios</h2>
-        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; justify-items: center;">
-            {% for service in ['Venta de Propiedades', 'Obra Nueva', 'Consultoría de Inversiones', 'Construcciones'] %}
-            <a href="{{ url_for('service_detail', id=loop.index0 + 1) }}" class="service-card" style="position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-decoration: none; transition: transform 0.4s ease;">
-                <img src="/static/images/service-{{ service | lower | replace(' ', '-') }}.jpg" alt="{{ service }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent); color: #ffffff; text-align: center;">
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 600;">{{ service }}</h3>
+<style>
+    /* Layout & Spacing */
+    .filter {
+        padding: 6rem 2rem 0 3rem;
+        background: #f9f9f9;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-weight: 700;
+        color: #1e3a8a;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .filter-form {
+        background: #ffffff;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .grid {
+        display: grid;
+    }
+    .grid-cols-1 {
+        grid-template-columns: 1fr;
+    }
+    @media (min-width: 768px) {
+        .md\:grid-cols-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .md\:grid-cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    .gap-4 {
+        gap: 1rem;
+    }
+    .mb-6 {
+        margin-bottom: 1.5rem;
+    }
+    /* Form Groups */
+    .form-group label {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1e3a8a;
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+    .form-group select,
+    .form-group input {
+        width: 100%;
+        padding: 0.75rem;
+        border: 2px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 1rem;
+        background: #ffffff;
+        color: #2d3748;
+        transition: border-color 0.3s ease;
+    }
+    /* Submit Button */
+    .btn-submit {
+        background: #1e3a8a;
+        color: #ffffff;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    .btn-submit:hover {
+        background: #164e7a;
+    }
+    /* Mobile Responsiveness */
+    @media (max-width: 640px) {
+        .filter {
+            padding: 3rem 1rem;
+        }
+        .filter-form {
+            padding: 1.5rem;
+        }
+        .form-group label {
+            font-size: 0.9rem;
+        }
+        .form-group select,
+        .form-group input {
+            padding: 0.65rem;
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<!-- Tipos de Inmuebles -->
+<section class="types reveal my-12">
+    <div class="container">
+        <h2 class="section-title">Tipos de Inmuebles</h2>
+        <div class="types-grid">
+            {% for type in ['Apartamento', 'Ático', 'Adosado', 'Villa'] %}
+            <a href="{{ url_for('properties', type=type) }}" class="type-card">
+                <img src="/static/images/type-{{ type | lower }}.jpg" alt="{{ type }}">
+                <div class="type-overlay">
+                    <h3>{{ type }}</h3>
                 </div>
             </a>
             {% endfor %}
@@ -154,20 +414,178 @@
     </div>
 </section>
 
-<!-- Tipos de Inmuebles -->
-<section class="types reveal" style="padding: 6rem 2rem; background: #f9f9f9; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);">
-    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
-        <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; color: #1e3a8a; text-align: center; margin-bottom: 3rem;">Tipos de Inmuebles</h2>
-        <div class="types-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; justify-items: center;">
-            {% for type in ['Apartamento', 'Ático', 'Adosado', 'Villa'] %}
-            <a href="{{ url_for('properties', type=type) }}" class="type-card" style="position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-decoration: none; transition: transform 0.4s ease;">
-                <img src="/static/images/type-{{ type | lower }}.jpg" alt="{{ type }}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease;">
-                <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent); color: #ffffff; text-align: center;">
-                    <h3 style="font-family: 'Playfair Display', serif; font-size: clamp(1.25rem, 2.5vw, 1.75rem); font-weight: 600;">{{ type }}</h3>
+<style>
+.types {
+    padding: 3rem 2rem;
+    background: #f9f9f9;
+    position: relative;
+}
+.types-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+.type-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transform: scale(0.95);
+    opacity: 0.3;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
+}
+.type-card img {
+    width: 120%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.type-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.4s ease;
+}
+.type-card:hover {
+    transform: scale(1);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+.type-card:hover .type-overlay {
+    transform: translateY(0);
+}
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #1e3a8a;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+    .types-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const typeCards = document.querySelectorAll('.type-card');
+    typeCards.forEach(card => {
+        const overlay = card.querySelector('.type-overlay');
+        if (overlay) {
+            overlay.style.transform = 'translateY(0)';
+            overlay.style.transition = 'none';
+        }
+        card.style.transform = 'scale(1)';
+        card.style.opacity = 1;
+    });
+});
+</script>
+
+<!-- Nuestros Servicios -->
+<section class="services reveal my-12">
+    <div class="container">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            {% for service in ['Venta de Propiedades', 'Obra Nueva', 'Consultoría de Inversiones', 'Construcciones'] %}
+            <a href="{{ url_for('service_detail', id=loop.index0 + 1) }}" class="service-card">
+                <img src="/static/images/service-{{ service | lower | replace(' ', '-') }}.jpg" alt="{{ service }}">
+                <div class="service-overlay">
+                    <h3>{{ service }}</h3>
                 </div>
             </a>
             {% endfor %}
         </div>
     </div>
 </section>
+
+<style>
+    .services {
+        padding: 3rem 2rem;
+        background: #ffffff;
+        position: relative;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        color: #1e3a8a;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .service-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 0px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        transform: scale(0.95);
+        opacity: 30%;
+        transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
+    }
+    .service-card img {
+        width: 120%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.4s ease;
+    }
+    .service-overlay {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 1.5rem;
+        background: rgba(0, 0, 0, 0.5);
+        color: #000000;
+        text-align: center;
+        transform: translateY(100%);
+        transition: transform 0.4s ease;
+    }
+    .service-card:hover {
+        transform: scale(1);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+    .service-card:hover .service-overlay {
+        transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+<script>
+    // Immediately show service card text overlay without any scroll-based animation
+    document.addEventListener('DOMContentLoaded', function () {
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            const overlay = card.querySelector('.service-overlay');
+            if (overlay) {
+                // Ensure the text overlay is always visible
+                overlay.style.transform = 'translateY(0)';
+                overlay.style.transition = 'none';
+            }
+            // Reset any transform or opacity set previously
+            card.style.transform = 'scale(1)';
+            card.style.opacity = 1;
+        });
+    });
+</script>
 {% endblock %}
