@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Política de Cookies{% endblock %}
+{% block content %}
+<section class="info-links reveal">
+    <style>
+        .info-links {
+            background: linear-gradient(135deg, #fefefe, #f4f4f9);
+            padding: 40px 20px;
+        }
+        .info-links h1 {
+            color: #2c3e50;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            transition: color 0.3s ease;
+        }
+        .info-links h1:hover {
+            color: #34495e;
+        }
+        .info-links p {
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .info-links a {
+            color: #2980b9;
+            transition: color 0.3s ease;
+        }
+        .info-links a:hover {
+            color: #1abc9c;
+        }
+    </style>
+    <h1 class="text-4xl font-bold mb-8 text-center">Información Legal</h1>
+    <p class="text-lg text-gray-700 mb-4">
+        Para conocer más sobre el uso de cookies, por favor consulte nuestra 
+        <a href="/cookies-policy" class="underline hover:text-blue-700">Política de Cookies</a>.
+    </p>
+    <p class="text-lg text-gray-700 mb-4">
+        Si requiere información sobre cuestiones legales, lea nuestro 
+        <a href="/legal-notice" class="underline hover:text-blue-700">Aviso Legal</a>.
+    </p>
+    <p class="text-lg text-gray-700 mb-4">
+        Para detalles sobre la gestión y protección de sus datos, revise nuestra 
+        <a href="/privacy-policy" class="underline hover:text-blue-700">Política de Privacidad</a>.
+    </p>
+</section>
+{% endblock %}

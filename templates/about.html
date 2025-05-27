@@ -3,32 +3,33 @@
 {% block title %}Sobre Nosotros{% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="about-hero reveal">
+<!-- Hero Section with Parallax Effect -->
+<section class="about-hero reveal" aria-labelledby="hero-title">
     <div class="hero-content">
-        <h1 class="hero-title">Sobre Nosotros</h1>
-        <p class="hero-subtitle">Tu socio de confianza en la Costa del Sol para encontrar propiedades exclusivas desde 1995.</p>
+        <h1 class="hero-title" id="hero-title">Sobre Nosotros</h1>
+        <p class="hero-subtitle">Tu aliado en la Costa del Sol para descubrir propiedades exclusivas desde 1995.</p>
+        <a href="/contact" class="cta-button btn-blue">Contáctanos Ahora</a>
     </div>
 </section>
 
 <!-- Enhanced Our Story Section -->
-<section class="about-story container reveal">
-    <h2 class="section-title">Nuestra Historia</h2>
+<section class="about-story container reveal" aria-labelledby="story-title">
+    <h2 class="section-title" id="story-title">Nuestra Historia</h2>
     <p class="section-text intro-text">
-        Desde nuestros inicios en 1995, Inmobiliaria Allianz Estates ha marcado la diferencia en el sector inmobiliario de la Costa del Sol. Explora nuestro viaje a través de los hitos que han definido nuestro legado.
+        Desde 1995, Inmobiliaria Allianz Estates redefine el mercado inmobiliario en la Costa del Sol. Descubre los momentos clave que han forjado nuestro legado.
     </p>
-    <div class="timeline">
+    <div class="timeline" role="region" aria-label="Cronología de Allianz Estates">
         <div class="timeline-item reveal-timeline" data-side="left">
             <div class="timeline-content">
-                <div class="timeline-card" role="button" tabindex="0" aria-expanded="false">
+                <div class="timeline-card" role="button" tabindex="0" aria-expanded="false" aria-controls="timeline-1995">
                     <div class="timeline-card-header">
                         <span class="timeline-year">1995</span>
-                        <h3 class="timeline-card-title">Fundación de Allianz Estates</h3>
+                        <h3 class="timeline-card-title">Fundación</h3>
                     </div>
-                    <div class="timeline-card-body">
-                        <p class="timeline-card-preview">Iniciamos nuestro camino en Marbella con una visión clara: transformar el mercado inmobiliario.</p>
+                    <div class="timeline-card-body" id="timeline-1995">
+                        <p class="timeline-card-preview">Iniciamos en Marbella con una visión transformadora.</p>
                         <div class="timeline-card-details">
-                            <p>Fundada por Elena Martínez, Inmobiliaria Allianz Estates nació con la misión de ofrecer un servicio personalizado y de alta calidad, enfocándose en propiedades exclusivas en la Costa del Sol.</p>
+                            <p>Fundada por Elena Martínez, Allianz Estates se estableció con la misión de ofrecer un servicio personalizado, enfocándose en propiedades exclusivas.</p>
                         </div>
                     </div>
                 </div>
@@ -36,15 +37,15 @@
         </div>
         <div class="timeline-item reveal-timeline" data-side="right">
             <div class="timeline-content">
-                <div class="timeline-card" role="button" tabindex="0" aria-expanded="false">
+                <div class="timeline-card" role="button" tabindex="0" aria-expanded="false" aria-controls="timeline-2005">
                     <div class="timeline-card-header">
                         <span class="timeline-year">2005</span>
-                        <h3 class="timeline-card-title">Expansión y Crecimiento</h3>
+                        <h3 class="timeline-card-title">Expansión</h3>
                     </div>
-                    <div class="timeline-card-body">
-                        <p class="timeline-card-preview">Celebramos una década de éxito expandiendo nuestra presencia en la región.</p>
+                    <div class="timeline-card-body" id="timeline-2005">
+                        <p class="timeline-card-preview">Celebramos 10 años abriendo nuevas oficinas.</p>
                         <div class="timeline-card-details">
-                            <p>Tras 10 años de operaciones, abrimos nuevas oficinas en Málaga y Fuengirola, duplicando nuestro equipo y consolidándonos como líderes en el mercado de lujo.</p>
+                            <p>Con nuevas sedes en Málaga y Fuengirola, duplicamos nuestro equipo y nos consolidamos como líderes en el mercado de lujo.</p>
                         </div>
                     </div>
                 </div>
@@ -52,15 +53,15 @@
         </div>
         <div class="timeline-item reveal-timeline" data-side="left">
             <div class="timeline-content">
-                <div class="timeline-card" role="button" tabindex="0" aria-expanded="false">
+                <div class="timeline-card" role="button" tabindex="0" aria-expanded="false" aria-controls="timeline-2015">
                     <div class="timeline-card-header">
                         <span class="timeline-year">2015</span>
-                        <h3 class="timeline-card-title">Reconocimiento Internacional</h3>
+                        <h3 class="timeline-card-title">Reconocimiento</h3>
                     </div>
-                    <div class="timeline-card-body">
-                        <p class="timeline-card-preview">Fuimos premiados como la mejor inmobiliaria de la Costa del Sol.</p>
+                    <div class="timeline-card-body" id="timeline-2015">
+                        <p class="timeline-card-preview">Premiados como la mejor inmobiliaria.</p>
                         <div class="timeline-card-details">
-                            <p>Recibimos el premio "Mejor Inmobiliaria de Lujo" en los European Property Awards, un reconocimiento a nuestra dedicación y excelencia en el sector.</p>
+                            <p>Ganamos el premio "Mejor Inmobiliaria de Lujo" en los European Property Awards por nuestra excelencia.</p>
                         </div>
                     </div>
                 </div>
@@ -68,15 +69,15 @@
         </div>
         <div class="timeline-item reveal-timeline" data-side="right">
             <div class="timeline-content">
-                <div class="timeline-card" role="button" tabindex="0" aria-expanded="false">
+                <div class="timeline-card" role="button" tabindex="0" aria-expanded="false" aria-controls="timeline-2025">
                     <div class="timeline-card-header">
                         <span class="timeline-year">2025</span>
-                        <h3 class="timeline-card-title">30 Años de Éxito</h3>
+                        <h3 class="timeline-card-title">30 Años</h3>
                     </div>
-                    <div class="timeline-card-body">
-                        <p class="timeline-card-preview">Celebramos tres décadas de innovación y compromiso con nuestros clientes.</p>
+                    <div class="timeline-card-body" id="timeline-2025">
+                        <p class="timeline-card-preview">Tres décadas de innovación y compromiso.</p>
                         <div class="timeline-card-details">
-                            <p>En nuestro 30º aniversario, seguimos liderando el mercado inmobiliario, ayudando a miles de clientes a encontrar su hogar ideal en la Costa del Sol.</p>
+                            <p>En nuestro 30º aniversario, seguimos liderando, ayudando a clientes a encontrar su hogar ideal.</p>
                         </div>
                     </div>
                 </div>
@@ -86,90 +87,116 @@
 </section>
 
 <!-- Team Section -->
-<section class="about-team reveal">
+<section class="about-team reveal" aria-labelledby="team-title">
     <div class="container">
-        <h2 class="section-title">Nuestro Equipo</h2>
+        <h2 class="section-title" id="team-title">Nuestro Equipo</h2>
         <div class="team-grid">
-            <div class="team-member">
-                <img src="/static/images/team-member-1.jpg" alt="Elena Martínez" class="team-photo">
+            <div class="team-member" role="article">
+                <img src="/static/images/team-member-1.jpg" alt="Elena Martínez, Fundadora y CEO" class="team-photo" loading="lazy">
                 <h3 class="team-name">Elena Martínez</h3>
                 <p class="team-role">Fundadora y CEO</p>
-                <p class="team-bio">Con más de 30 años de experiencia, Elena lidera el equipo con una visión clara y un enfoque centrado en el cliente.</p>
+                <p class="team-bio">Con 30 años de experiencia, Elena lidera con una visión centrada en el cliente.</p>
             </div>
-            <div class="team-member">
-                <img src="/static/images/team-member-2.jpg" alt="Carlos Gómez" class="team-photo">
+            <div class="team-member" role="article">
+                <img src="/static/images/team-member-2.jpg" alt="Carlos Gómez, Director de Ventas" class="team-photo" loading="lazy">
                 <h3 class="team-name">Carlos Gómez</h3>
                 <p class="team-role">Director de Ventas</p>
-                <p class="team-bio">Carlos se especializa en propiedades de lujo, asegurando que cada cliente encuentre su hogar perfecto.</p>
+                <p class="team-bio">Carlos asegura que cada cliente encuentre la propiedad perfecta con su experiencia en lujo.</p>
             </div>
-            <div class="team-member">
-                <img src="/static/images/team-member-3.jpg" alt="Sofía Rodríguez" class="team-photo">
+            <div class="team-member" role="article">
+                <img src="/static/images/team-member-3.jpg" alt="Sofía Rodríguez, Agente Inmobiliaria" class="team-photo" loading="lazy">
                 <h3 class="team-name">Sofía Rodríguez</h3>
                 <p class="team-role">Agente Inmobiliaria</p>
-                <p class="team-bio">Sofía aporta un enfoque fresco y dinámico, ayudando a los clientes con entusiasmo y profesionalismo.</p>
+                <p class="team-bio">Sofía aporta entusiasmo y profesionalismo para guiar a los clientes.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- Values Section -->
-<section class="about-values container reveal">
-    <h2 class="section-title">Nuestros Valores</h2>
+<section class="about-values container reveal" aria-labelledby="values-title">
+    <h2 class="section-title" id="values-title">Nuestros Valores</h2>
     <div class="values-grid">
         <div class="value-item">
-            <i class="fas fa-handshake value-icon"></i>
+            <i class="fas fa-handshake value-icon" aria-hidden="true"></i>
             <h3 class="value-title">Confianza</h3>
-            <p class="value-text">Construimos relaciones basadas en la transparencia y la integridad.</p>
+            <p class="value-text">Relaciones basadas en transparencia e integridad.</p>
         </div>
         <div class="value-item">
-            <i class="fas fa-star value-icon"></i>
+            <i class="fas fa-star value-icon" aria-hidden="true"></i>
             <h3 class="value-title">Excelencia</h3>
-            <p class="value-text">Buscamos la perfección en cada detalle para superar tus expectativas.</p>
+            <p class="value-text">Perfección en cada detalle para superar expectativas.</p>
         </div>
         <div class="value-item">
-            <i class="fas fa-home value-icon"></i>
+            <i class="fas fa-home value-icon" aria-hidden="true"></i>
             <h3 class="value-title">Pasión</h3>
-            <p class="value-text">Amamos lo que hacemos y nos apasiona encontrar el hogar de tus sueños.</p>
+            <p class="value-text">Amamos encontrar el hogar de tus sueños.</p>
         </div>
     </div>
 </section>
 
-<!-- Call to Action Section -->
-<section class="about-cta reveal">
-    <div class="container">
-        <h2 class="section-title">¿Listo para Encontrar tu Hogar Ideal?</h2>
-        <p class="section-text">Contáctanos hoy y comienza el viaje hacia tu nueva propiedad en la Costa del Sol.</p>
-        <div class="cta-buttons">
-            <a href="/contact" class="cta-button btn-blue">Contáctanos</a>
-            <a href="/properties" class="cta-button btn-outline">Ver Propiedades</a>
+<!-- Contact Form Section -->
+<section class="about-contact container reveal" aria-labelledby="contact-title">
+    <h2 class="section-title" id="contact-title">Contáctanos</h2>
+    <p class="section-text">¿Listo para empezar? Completa el formulario y nuestro equipo te responderá pronto.</p>
+    <form class="contact-form" method="POST" action="{{ url_for('contact') }}" aria-label="Formulario de Contacto">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required aria-required="true" placeholder="Tu nombre">
         </div>
-    </div>
+        <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" id="email" name="email" required aria-required="true" placeholder="tu@email.com">
+        </div>
+        <div class="form-group">
+            <label for="message">Mensaje</label>
+            <textarea id="message" name="message" required aria-required="true" placeholder="¿Cómo podemos ayudarte?"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Enviar Mensaje</button>
+    </form>
+    {% if success %}
+        <p class="success-message" role="alert">¡Mensaje enviado con éxito! Te contactaremos pronto.</p>
+    {% endif %}
 </section>
 
 <!-- Map Section with Iframe -->
-<section class="about-map reveal">
-    <h2 class="section-title container">Encuéntranos en Fuengirola</h2>
+<section class="about-map reveal" aria-labelledby="map-title">
+    <h2 class="section-title container" id="map-title">Nuestra Ubicación</h2>
     <iframe
         class="map-iframe"
-        src="https://www.google.com/maps/embed/v1/place?q=36.5407,-4.6239&zoom=14&language=es"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3198.6140801851236!2d-4.627978684676104!3d36.53984888000324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f8c2c8f8c8f7%3A0x7b8e7c8e7c8e7c8e!2sAv.%20de%20Las%20Salinas%2C%2016%2C%2029640%20Fuengirola%2C%20M%C3%A1laga%2C%20Spain!5e0!3m2!1sen!2sus!4v1697654321!5m2!1sen!2sus"
         frameborder="0"
         style="border:0;"
         allowfullscreen=""
+        loading="lazy"
         aria-hidden="false"
         tabindex="0">
     </iframe>
 </section>
 
-<!-- JavaScript for Timeline Interactivity -->
+<!-- JavaScript for Enhanced Interactivity -->
 <script>
-// Handle timeline card expand/collapse
+// Debounce utility to optimize scroll performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Timeline card expand/collapse
 document.querySelectorAll('.timeline-card').forEach(card => {
     card.addEventListener('click', () => {
         const isExpanded = card.getAttribute('aria-expanded') === 'true';
         card.setAttribute('aria-expanded', !isExpanded);
+        card.classList.toggle('expanded');
     });
 
-    // Support keyboard navigation
     card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -178,20 +205,84 @@ document.querySelectorAll('.timeline-card').forEach(card => {
     });
 });
 
-// Staggered reveal for timeline items
-const observer = new IntersectionObserver((entries) => {
+// Scroll reveal animations
+const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
             setTimeout(() => {
                 entry.target.classList.add('active');
-            }, index * 300); // Stagger by 300ms
-            observer.unobserve(entry.target);
+            }, index * 200);
+            revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.3 });
+}, { threshold: 0.2 });
 
-document.querySelectorAll('.reveal-timeline').forEach(item => {
-    observer.observe(item);
+document.querySelectorAll('.reveal, .reveal-timeline').forEach(item => {
+    revealObserver.observe(item);
+});
+
+// Parallax effect for hero section
+const hero = document.querySelector('.about-hero');
+if (hero) {
+    const handleScroll = debounce(() => {
+        const scrollPosition = window.scrollY;
+        hero.style.backgroundPositionY = `${scrollPosition * 0.3}px`;
+    }, 10);
+    window.addEventListener('scroll', handleScroll);
+}
+
+// Form submission feedback
+const form = document.querySelector('.contact-form');
+if (form) {
+    form.addEventListener('submit', (e) => {
+        const submitButton = form.querySelector('.form-submit');
+        submitButton.textContent = 'Enviando...';
+        submitButton.disabled = true;
+        setTimeout(() => {
+            submitButton.textContent = 'Enviar Mensaje';
+            submitButton.disabled = false;
+        }, 2000); // Simulate async submission
+    });
+}
+
+// Add hover effect for buttons
+document.querySelectorAll('.cta-button, .form-submit').forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        button.style.transform = 'translateY(-6px) scale(1.05)';
+    });
+    button.addEventListener('mouseleave', () => {
+        button.style.transform = 'translateY(0) scale(1)';
+    });
 });
 </script>
+
+<style>
+/* Inline styles for minor tweaks specific to this template */
+.expanded .timeline-card-details {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--celeste-dark);
+}
+
+.success-message {
+    text-align: center;
+    color: var(--celeste);
+    font-family: var(--font-secondary);
+    font-size: 1.125rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--glass-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 1.5rem;
+    }
+    .timeline-card {
+        padding: 1.5rem;
+    }
+}
+</style>
 {% endblock %}

@@ -1,8 +1,15 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
-from database import get_blog_posts, save_contact_message, get_blog_post_by_id
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 import traceback
+from database import get_blog_posts, save_contact_message, get_blog_post_by_id
 
 app = Flask(__name__)
+
+# Gmail configuration (replace with your credentials or use environment variables for security)
+GMAIL_USER = 'zmouedden2020@gmail.com'  # Replace with your Gmail address
+GMAIL_PASSWORD = 'ztvx aidu fbir gonx'  # Replace with your Gmail App Password
 
 locations = ['Málaga', 'Estepona', 'Fuengirola', 'Marbella', 'Mijas', 'Benahavís', 'Manilva', 'Casares', 'Sotogrande', 'Torremolinos']
 types = ['Apartamento', 'Ático', 'Adosado', 'Villa']
@@ -26,6 +33,27 @@ properties_list = [
 @app.template_filter('format_price')
 def format_price(value):
     return f"{value:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
+def send_gmail(sender_email, sender_password, recipient_email, subject, body):
+    """Send an email using Gmail's SMTP server."""
+    try:
+        # Create the email
+        msg = MIMEMultipart()
+        msg['From'] = sender_email
+        msg['To'] = recipient_email
+        msg['Subject'] = subject
+        msg.attach(MIMEText(body, 'plain'))
+
+        # Connect to Gmail's SMTP server
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(sender_email, sender_password)
+        server.sendmail(sender_email, recipient_email, msg.as_string())
+        server.quit()
+        return True
+    except Exception as e:
+        print(f"Error sending email: {str(e)}")
+        return False
 
 @app.route('/')
 def index():
@@ -112,8 +140,14 @@ def send_email():
 
     try:
         save_contact_message(name, email, message)
+        # Send email notification
+        subject = f"Nuevo mensaje de contacto de {name}"
+        body = f"Nombre: {name}\nCorreo: {email}\nTeléfono: {phone or 'No proporcionado'}\nMensaje: {message}\nRol: {role or 'No especificado'}\nID de Propiedad: {property_id or 'No especificado'}"
+        if not send_gmail(GMAIL_USER, GMAIL_PASSWORD, GMAIL_USER, subject, body):
+            return jsonify({'status': 'error', 'message': 'Error al enviar el correo'}), 500
         return jsonify({'status': 'success'}), 200
     except Exception as e:
+        print(f"Error en /api/send-email: {str(e)}")
         return jsonify({'status': 'error', 'message': str(e)}), 500
 
 @app.route('/service/<int:id>')
@@ -168,7 +202,16 @@ def contact():
             name = request.form.get('name')
             email = request.form.get('email')
             message = request.form.get('message')
+            
+            # Save the contact message to the database
             save_contact_message(name, email, message)
+            
+            # Send email notification
+            subject = f"Nuevo mensaje de contacto de {name}"
+            body = f"Nombre: {name}\nCorreo: {email}\nMensaje: {message}"
+            if not send_gmail(GMAIL_USER, GMAIL_PASSWORD, GMAIL_USER, subject, body):
+                return "Error al enviar el correo", 500
+            
             return redirect(url_for('contact', success=True))
         success = request.args.get('success', False)
         return render_template('contact.html', success=success)
@@ -198,6 +241,14 @@ def legal_notice():
         return render_template('legal_notice.html')
     except Exception as e:
         print(f"Error en /legal-notice: {e}")
+        return "Error al cargar la página", 500
+    
+@app.route("/terms")
+def terms():
+    try:
+        return render_template('terms.html')
+    except Exception as e:
+        print(f"Error en /terms: {e}")
         return "Error al cargar la página", 500
 
 @app.route('/admin/new-post', methods=['GET', 'POST'])

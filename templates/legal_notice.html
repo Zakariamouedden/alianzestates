@@ -1,315 +1,69 @@
 {% extends "base.html" %}
-{% block title %}Aviso Legal{% endblock %}
+{% block title %}Política de Privacidad{% endblock %}
 {% block content %}
-<section class="about reveal">
-    <div class="container py-12 px-4">
-        <h1 class="text-4xl font-bold mb-8 text-center">Aviso Legal</h1>
-        <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-            <p class="text-lg text-gray-700 mb-4">
-                Este aviso legal regula el uso del sitio web de Inmobiliaria Allianz Estates.
-            </p>
-            <h2 class="text-2xl font-semibold mb-4">Identificación</h2>
-            <p class="text-gray-700 mb-4">
-                Inmobiliaria Allianz Estates<br>
-                Dirección: Calle Ficticia 123, Málaga, España<br>
-                Email: info@allianzestates.com<br>
-                Teléfono: +34 123 456 789
-            </p>
-            <pled by the user to ensure the website remains functional and visually appealing across different devices and screen sizes. Below is a summary of the changes made to each file, followed by the updated versions of the files.
-
----
-
-### Summary of Changes
-
-#### **`index.html`**
-1. **Centered and Enlarged Titles**: Added `text-center` and `text-4xl` classes to all `<h2>` section titles (e.g., "Nuestra Filosofía", "Localizaciones Exclusivas", etc.) to center and increase their size. For the hero section, the `<h1>` title "SOMOS ALIANZ" was given `text-4xl` and `md:text-5xl` for responsiveness.
-2. **Increased Space Between "Propiedades Destacadas" and "Nuestros Servicios"**: Added the `my-24` class to the "Nuestros Servicios" section to increase the vertical margin (from `my-12` to `my-24`).
-3. **Made Arrows More Visual**: Enhanced the arrows in the "Propiedades Destacadas" section by updating their styles in `styles.css` (larger size, shadow, hover effect).
-4. **Added More Professional Animations**: Enhanced the `reveal` class in `styles.css` with a fade-in and slide-up animation, and added hover animations to cards (e.g., `location-card`, `featured-card`, etc.).
-5. **Updated Footer**: Changed the footer name to "Inmobiliaria Allianz Estates" and added links to the new Privacy Policy, Cookies Policy, and Legal Notice pages.
-6. **Added Links to New Pages**: Added navigation links for Privacy Policy, Cookies Policy, and Legal Notice in the footer.
-7. **Adjusted "Three Lines" Menu Toggle**: Fixed the menu toggle position on PCs by adjusting the `nav-toggle` class in `styles.css`.
-
-#### **`styles.css`**
-1. **Enhanced Arrows in "Propiedades Destacadas"**: Updated the `.swiper-button-prev` and `.swiper-button-next` classes to increase their size (`48px`), changed their background to `--blue-500`, added a shadow, and included a hover effect with a scale transformation.
-2. **Added Professional Animations**:
-   - Enhanced the `.reveal` class with a smoother fade-in and slide-up animation using `opacity` and `transform`.
-   - Added hover animations to `.location-card`, `.featured-card`, `.service-card`, and `.type-card` with scale, rotation, and shadow transitions for a more professional feel.
-3. **Adjusted "Three Lines" Menu Toggle**: Modified the `nav-toggle` class in the media query to adjust its `top` position to `1.5rem` for better alignment on PCs.
-4. **Changed Background of "Localizaciones Exclusivas"**: Updated the `.locations` class to use a subtle gradient (`linear-gradient(135deg, #f9f5ec 0%, #e0d8c3 100%)`) instead of the solid `--light-gray` color.
-5. **Added New Utility Class**: Added `my-24` for the increased spacing between sections.
-6. **Added Responsive Title Size**: Added `text-5xl` and `md:text-5xl` for larger titles on bigger screens.
-
-#### **`app.py`**
-1. **Added Routes for New Pages**: Added new routes for `/privacy-policy`, `/cookies-policy`, and `/legal-notice` to handle the new pages.
-2. **Error Handling**: Ensured each new route includes try-except blocks for error handling, consistent with the rest of the application.
-
-#### **New Template Files**
-1. Created `privacy_policy.html`, `cookies_policy.html`, and `legal_notice.html` to support the new pages, ensuring they extend `base.html` and follow the same styling structure as other pages.
-
----
-
-### Updated Files
-
-#### **`index.html`**
-<xaiArtifact artifact_id="3a3831e3-fe5b-4edd-898a-6cbc9615919e" artifact_version_id="fa9e4498-9e2b-459c-b9fe-2f0ddafdd635" title="index.html" contentType="text/html">
-<script type="text/javascript">
-        var gk_isXlsx = false;
-        var gk_xlsxFileLookup = {};
-        var gk_fileData = {};
-        function filledCell(cell) {
-          return cell !== '' && cell != null;
-        }
-        function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-
-                // Convert sheet to JSON to filter blank rows
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                // Filter out blank rows (rows where all cells are empty, null, or undefined)
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-
-                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                // Fallback
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-
-                // Convert filtered JSON back to CSV
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-        }
-</script>
-{% extends "base.html" %}
-{% block title %}Inicio{% endblock %}
-{% block content %}
-<!-- Video de Fondo -->
-<div class="hero reveal">
-    <video autoplay muted loop class="hero-video">
-        <source src="/static/videos/1109472_1080p_Standard_1280x720.mp4" type="video/mp4">
-        Tu navegador no soporta videos.
-    </video>
-    <div class="hero-overlay">
-        <div class="hero-content">
-            <h1 class="shadow-text text-4xl md:text-5xl">SOMOS ALIANZ</h1>
-        </div>
-    </div>
-</div>
-
-<!-- Nuestra Filosofía -->
-<section class="philosophy reveal">
-    <div class="container">
-        <h2 class="section-title text-4xl text-center">Nuestra Filosofía</h2>
-        <div class="text-center max-w-3xl mx-auto">
-            <p class="text-lg text-gray-700">
-                En Inmobiliaria Luxe, nos dedicamos a ofrecer propiedades exclusivas en la Costa del Sol, combinando profesionalidad, discreción y un profundo conocimiento del mercado. Nuestro compromiso es encontrar el hogar perfecto para usted, con un servicio personalizado que supera expectativas.
-            </p>
-        </div>
-    </div>
+<section class="about reveal py-12 px-4">
+    <h1 class="text-4xl font-bold mb-8 text-center">Términos y Condiciones</h1>
+    <article class="max-w-3xl mx-auto">
+        <p class="text-lg text-gray-700 mb-4">
+            El propósito de este documento es informar a los visitantes que acceden y/o usan este sitio web sobre los términos y condiciones generales que rigen su uso. Al acceder y/o usar este sitio, usted acepta completa y sin reservas los términos y condiciones generales establecidos en este documento.
+        </p>
+        <h2 class="text-2xl font-semibold mb-4">Condiciones de uso</h2>
+        <p class="text-gray-700 mb-4">
+            El visitante se compromete a utilizar este sitio web y los servicios ofrecidos conforme a la ley, a estos términos y condiciones generales, a los valores generalmente aceptados, las buenas prácticas y el orden público.
+        </p>
+        <p class="text-gray-700 mb-4">
+            Las personas o empresas que nos suministren información se comprometen a proporcionar datos veraces que no vulneren derechos de terceros ni la ley. Por favor, contáctenos si cree que el contenido o la información en este sitio web infringe algún derecho legítimo o la legislación vigente.
+        </p>
+        <p class="text-gray-700 mb-4">
+            Sin previa, explícita y por escrito autorización, se prohíbe estrictamente la transferencia, divulgación, venta, alquiler y/o exposición pública de este sitio web o de cualquier parte del mismo.
+        </p>
+        <p class="text-gray-700 mb-4">
+            El usuario se compromete a indemnizar al propietario de este sitio por cualquier pérdida o daño que pueda ocasionarse por su uso en contravención a estos términos y condiciones generales y/o a la legislación vigente.
+        </p>
+        <h2 class="text-2xl font-semibold mb-4">Cookies</h2>
+        <p class="text-gray-700 mb-4">
+            Una cookie es un pequeño archivo de datos enviado por los sitios web que visita a su navegador, que se convierte en un archivo de texto y permite al sitio registrar información sobre su visita, idioma preferido y otras opciones. Esto puede facilitar su próxima visita y hacer el sitio más útil. Las cookies juegan un papel importante. Sin ellas, usar el sitio web resultaría una experiencia algo frustrante.
+        </p>
+        <p class="text-gray-700 mb-4">
+            Utilizamos diferentes tipos de cookies para el funcionamiento del sitio web. Algunas o todas las cookies identificadas a continuación pueden almacenarse en su navegador. Puede ver y gestionar las cookies en su navegador (aunque los navegadores de dispositivos móviles pueden no ofrecer esta opción).
+        </p>
+        <p class="text-gray-700 mb-4">
+            PHPSESSID. Esta cookie nos ayuda a conocer sus preferencias respecto al idioma del sitio web. Se elimina al cerrar el navegador.<br>
+            ACCEPTCOOKIES. Esta cookie nos indica que ha aceptado nuestra política de cookies y que no es necesario notificarle nuevamente. Dura 1 año.<br>
+            WEBIM_LITE. Si este sitio web ha habilitado el sistema de chat, esta cookie nos permite conocer el nombre que ha seleccionado para contactarnos. Dura 2 años.
+        </p>
+        <p class="text-gray-700 mb-4">
+            Utilizamos algunos servicios de terceros que también pueden almacenar cookies en su navegador, como Google, ya que usamos su servicio de mapas para mostrarle la ubicación de las propiedades. Puede ver más información sobre las cookies de Google en este enlace.
+        </p>
+        <h2 class="text-2xl font-semibold mb-4">Propiedad legal</h2>
+        <p class="text-gray-700 mb-4">
+            El propietario de este servicio web es Alianz Obras y Servicios Malaga 2012 SL, con domicilio social en Avenida de Las Salinas, 16, 41927 Fuengirola (Málaga) – España, número de teléfono +34951083314 y correo electrónico info@alianzestates.com, y es asimismo el editor y titular de su contenido.
+        </p>
+        <p class="text-gray-700 mb-4">
+            El contenido, la información y los consejos expresados en este sitio deben entenderse como meramente orientativos. El propietario no se hace responsable de la eficacia o exactitud de los mismos, quedando exento de cualquier responsabilidad contractual o extracontractual con la persona o empresa que los utilice, ya que será a su propio criterio decidir sobre cualquier eventualidad.
+        </p>
+        <p class="text-gray-700 mb-4">
+            El propietario se reserva el derecho de modificar el contenido del sitio web sin previo aviso y sin ninguna restricción. Tanto el propietario como Entersoftweb, S.L., en calidad de proveedor del servicio, no aceptan responsabilidad alguna por los daños que puedan ocasionarse por la indisponibilidad y/o interrupción del sitio y de los servicios ofrecidos en él.
+        </p>
+        <p class="text-gray-700 mb-4">
+            El propietario se reserva el derecho de modificar los términos y condiciones generales expresados en este documento sin previo aviso.
+        </p>
+        <p class="text-gray-700 mb-4">
+            Los términos y condiciones generales expresados en este documento se rigen por la ley española. El propietario, los visitantes del sitio y cualquier otra persona o empresa que utilice los servicios proporcionados en este sitio renuncian expresamente a cualquier otra jurisdicción y se someten a los juzgados y tribunales de la ciudad de Fuengirola para la resolución de cualquier controversia o disputa legal que pueda surgir.
+        </p>
+        <h2 class="text-2xl font-semibold mb-4">Información para el consumidor</h2>
+        <p class="text-gray-700 mb-4">
+            Todos los precios de venta, tanto de propiedades de segunda mano como de nuevas construcciones exhibidas en este sitio, incluirán impuestos y otros gastos legalmente a cargo del comprador, tales como honorarios de abogados, actos notariales, tasas registrales, IVA, impuesto de transmisiones patrimoniales, honorarios de agencia inmobiliaria, etc.
+        </p>
+        <p class="text-gray-700 mb-4">
+            En el caso de ofertas para nuevas construcciones que aún se encuentren en fase de proyecto o construcción, y para las cuales se prevean pagos iniciales, dichos importes deberán estar garantizados conforme a la ley, indicando el garante el número de póliza correspondiente, su número de cuenta corriente y si dicho importe es un pago inicial, un depósito o ambos.
+        </p>
+        <p class="text-gray-700 mb-4">
+            En el caso de propiedades en alquiler, los gastos de comunidad u otros gastos que puedan corresponder al uso de electricidad, gas, teléfono, agua, etc., no están incluidos en la renta indicada.
+        </p>
+        <p class="text-gray-700">
+            El consumidor tiene derecho a recibir una copia del llamado documento breve informativo de la propiedad.
+        </p>
+    </article>
 </section>
-
-<!-- Localizaciones Exclusivas -->
-<section class="locations reveal">
-    <div class="container">
-        <h2 class="section-title text-4xl text-center">Localizaciones Exclusivas</h2>
-        <div class="locations-grid">
-            {% for loc in ['Málaga', 'Estepona', 'Fuengirola', 'Marbella', 'Mijas'] %}
-            <div class="location-card">
-                <img src="/static/images/location-{{ loc | lower }}.jpg" alt="{{ loc }}" class="w-full h-32 object-cover">
-                <div>
-                    <span class="shadow-text">{{ loc }}</span>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-        <div class="locations-grid mt-4">
-            {% for loc in ['Benahavís', 'Manilva', 'Casares', 'Sotogrande', 'Torremolinos'] %}
-            <div class="location-card">
-                <img src="/static/images/location-{{ loc | lower }}.jpg" alt="{{ loc }}" class="w-full h-32 object-cover">
-                <div>
-                    <span class="shadow-text">{{ loc }}</span>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Propiedades Destacadas -->
-<section class="featured reveal">
-    <div class="container">
-        <h2 class="section-title text-4xl text-center">Propiedades Destacadas</h2>
-        {% if featured %}
-        <div class="swiper">
-            <div class="swiper-wrapper">
-                {% for prop in featured %}
-                <div class="swiper-slide">
-                    <a href="{{ url_for('property_detail', id=prop[0]) }}" class="featured-card">
-                        <img src="/static/images/property-{{ loop.index }}.jpg" alt="{{ prop[1] }}" onerror="this.src='/static/images/default_property.jpg'">
-                        <div class="overlay">
-                            <h3>{{ prop[4] }}</h3> <!-- location -->
-                            <p class="price">{{ prop[2] | format_price }}€</p> <!-- price -->
-                            <p>{{ prop[3] }} Hab. | {{ prop[6] }} Baños</p> <!-- bedrooms | bathrooms -->
-                        </div>
-                    </a>
-                </div>
-                {% endfor %}
-            </div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-        {% else %}
-        <p class="text-center text-gray-600">No hay propiedades destacadas disponibles en este momento.</p>
-        {% endif %}
-    </div>
-</section>
-
-<!-- Nuestros Servicios -->
-<section class="services reveal my-24">
-    <div class="container">
-        <h2 class="section-title text-4xl text-center">Nuestros Servicios</h2>
-        <div class="services-grid">
-            {% for service in ['Venta de Propiedades', 'Obra Nueva', 'Consultoría de Inversiones', 'Construcciones'] %}
-            <a href="{{ url_for('service_detail', id=loop.index0 + 1) }}" class="service-card">
-                <img src="/static/images/service-{{ service | lower | replace(' ', '-') }}.jpg" alt="{{ service }}">
-                <div>
-                    <h3>{{ service }}</h3>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Filtro de Propiedades -->
-<section class="filter reveal">
-    <div class="container">
-        <h2 class="section-title text-4xl text-center">Encuentra tu Propiedad Ahora</h2>
-        <form method="GET" action="{{ url_for('properties') }}" class="filter-form max-w-4xl mx-auto">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="form-group">
-                    <label for="location">Ubicación</label>
-                    <select id="location" name="location">
-                        <option value="">Cualquier</option>
-                        {% for loc in locations %}
-                        <option value="{{ loc }}">{{ loc }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="type">Tipo de Inmueble</label>
-                    <select id="type" name="type">
-                        <option value="">Cualquier</option>
-                        {% for t in types %}
-                        <option value="{{ t }}">{{ t }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="bedrooms">Dormitorios (mínimo)</label>
-                    <select id="bedrooms" name="bedrooms">
-                        <option value="0">Cualquier</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="bathrooms">Baños (mínimo)</label>
-                    <select id="bathrooms" name="bathrooms">
-                        <option value="0">Cualquier</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="price_min">Precio Mínimo (€)</label>
-                    <input type="number" id="price_min" name="price_min" min="0" step="10000">
-                </div>
-                <div class="form-group">
-                    <label for="price_max">Precio Máximo (€)</label>
-                    <input type="number" id="price_max" name="price_max" min="0" step="10000">
-                </div>
-                <div class="form-group">
-                    <label for="size">Superficie Mínima (m²)</label>
-                    <input type="number" id="size" name="size" min="0" step="10">
-                </div>
-            </div>
-            <div class="text-center mt-6">
-                <button type="submit" class="btn">Buscar Propiedades</button>
-            </div>
-        </form>
-    </div>
-</section>
-
-<!-- Tipos de Inmuebles -->
-<section class="types reveal">
-    <div class="container">
-        <h2 class="section-title text-4xl text-center">Tipos de Inmuebles</h2>
-        <div class="types-grid">
-            {% for type in ['Apartamento', 'Ático', 'Adosado', 'Villa'] %}
-            <a href="{{ url_for('properties', type=type) }}" class="type-card">
-                <img src="/static/images/type-{{ type | lower }}.jpg" alt="{{ type }}">
-                <div>
-                    <h3>{{ type }}</h3>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-    <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Inmobiliaria Allianz Estates</h3>
-                <p class="text-sm">Tu socio de confianza en la Costa del Sol para encontrar propiedades exclusivas.</p>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
-                <ul class="space-y-2">
-                    <li><a href="{{ url_for('index') }}">Inicio</a></li>
-                    <li><a href="{{ url_for('properties') }}">Propiedades</a></li>
-                    <li><a href="{{ url_for('about') }}">Sobre Nosotros</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contacto</a></li>
-                    <li><a href="{{ url_for('privacy_policy') }}">Política de Privacidad</a></li>
-                    <li><a href="{{ url_for('cookies_policy') }}">Política de Cookies</a></li>
-                    <li><a href="{{ url_for('legal_notice') }}">Aviso Legal</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Contáctanos</h3>
-                <p class="text-sm">Email: info@allianzestates.com</p>
-                <p class="text-sm">Teléfono: +34 123 456 789</p>
-                <div class="footer-social mt-4">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-8">
-            <p class="text-sm">© 2025 Inmobiliaria Allianz Estates. Todos los derechos reservados.</p>
-        </div>
-    </div>
-</footer>
 {% endblock %}
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'934eb34608151d7a',t:'MTc0NTQyNTM1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
