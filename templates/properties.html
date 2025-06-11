@@ -1,105 +1,315 @@
-<script type="text/javascript">
-    var gk_isXlsx = false;
-    var gk_xlsxFileLookup = {};
-    var gk_fileData = {};
-    function filledCell(cell) {
-      return cell !== '' && cell != null;
-    }
-    function loadFileData(filename) {
-        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
-            try {
-                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
-                var firstSheetName = workbook.SheetNames[0];
-                var worksheet = workbook.Sheets[firstSheetName];
-                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
-                var filteredData = jsonData.filter(row => row.some(filledCell));
-                var headerRowIndex = filteredData.findIndex((row, index) =>
-                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
-                );
-                if (headerRowIndex === -1 || headerRowIndex > 25) {
-                  headerRowIndex = 0;
-                }
-                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
-                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
-                return csv;
-            } catch (e) {
-                console.error(e);
-                return "";
-            }
-        }
-        return gk_fileData[filename] || "";
-    }
-</script>
 {% extends "base.html" %}
 {% block title %}Viviendas{% endblock %}
 {% block content %}
-<section class="properties reveal">
-    <div class="container mx-auto py-12 px-4">
-        <h2 class="section-title">Encuentra tu Propiedad Ideal</h2>
-        
-        <!-- Formulario de Filtros -->
-        <form method="GET" class="properties-filter mb-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                <div class="form-group">
-                    <label for="price_min">Precio Mínimo (€)</label>
-                    <input type="number" id="price_min" name="price_min" min="0" step="1000" placeholder="0">
-                </div>
-                <div class="form-group">
-                    <label for="price_max">Precio Máximo (€)</label>
-                    <input type="number" id="price_max" name="price_max" min="0" step="1000" placeholder="10,000,000">
-                </div>
-                <div class="form-group">
-                    <label for="bedrooms">Habitaciones</label>
-                    <select id="bedrooms" name="bedrooms">
-                        <option value="0">Cualquier</option>
-                        <option value="1">1+</option>
-                        <option value="2">2+</option>
-                        <option value="3">3+</option>
-                        <option value="4">4+</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="location">Ubicación</label>
-                    <select id="location" name="location">
-                        <option value="">Cualquier</option>
-                        {% for loc in locations %}
-                        <option value="{{ loc }}">{{ loc }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="type">Tipo de Inmueble</label>
-                    <select id="type" name="type">
-                        <option value="">Cualquier</option>
-                        {% for t in types %}
-                        <option value="{{ t }}">{{ t }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-            <div class="mt-6 text-center">
-                <button type="submit" class="btn">Filtrar Propiedades</button>
-            </div>
-        </form>
+<section class="properties">
+  <style>
+    .properties {
+      background: #f8fafc;
+      min-height: calc(100vh - 80px);
+      padding: 4rem 1rem;
+      font-family: 'Inter', sans-serif;
+    }
 
-        <!-- Resultados de Propiedades -->
-        <div class="properties-grid">
-            {% if properties %}
-                {% for prop in properties %}
-                <div class="property-card">
-                    <img src="{{ prop[11] or '/static/images/default_property.jpg' }}" alt="{{ prop[1] }}">
-                    <div>
-                        <h3>{{ prop[1] }}</h3>
-                        <p class="text-gray-600">{{ prop[4] }} | {{ prop[3] }} hab. | {{ prop[2] | format_price }}€</p>
-                        <p class="text-gray-700 line-clamp-3">{{ prop[9] }}</p>
-                        <a href="/property/{{ prop[0] }}" class="mt-4 inline-block text-gold hover:underline">Ver Detalles</a>
-                    </div>
-                </div>
-                {% endfor %}
-            {% else %}
-                <p class="text-center text-gray-600 col-span-full">No se encontraron propiedades con los filtros seleccionados.</p>
-            {% endif %}
+    .section-title {
+      color: #1e293b;
+      font-size: 2.25rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title span {
+      color: #2563eb;
+    }
+
+    .properties-filter {
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .grid-cols {
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .grid-cols {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid-cols {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: #334155;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      transition: 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn {
+      background: #2563eb;
+      color: white;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #1e40af;
+      transform: translateY(-2px);
+    }
+
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 2rem auto 0;
+    }
+
+    .property-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .property-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .property-image-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .property-image-container img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .badge {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      background: #facc15;
+      color: #1e293b;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 9999px;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-content h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.125rem;
+      color: #1e293b;
+    }
+
+    .details {
+      font-size: 0.875rem;
+      color: #64748b;
+      margin-bottom: 0.5rem;
+    }
+
+    .description {
+      font-size: 0.85rem;
+      color: #4b5563;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: 0.2s ease;
+    }
+
+    .btn-outline {
+      border: 1px solid #d1d5db;
+      background: white;
+      color: #1e293b;
+    }
+
+    .btn-outline:hover {
+      background: #f1f5f9;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #1e40af;
+    }
+
+    .results-info {
+      text-align: center;
+      margin-top: 1rem;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+  </style>
+
+  <div class="container">
+    <h2 class="section-title">Encuentra tu <span>Propiedad Ideal</span></h2>
+
+    <form method="GET" class="properties-filter">
+      <div class="grid grid-cols">
+        <div class="form-group">
+          <label for="price_min">Precio Mínimo (€)</label>
+          <input type="number" id="price_min" name="price_min" min="0" placeholder="0">
         </div>
+        <div class="form-group">
+          <label for="price_max">Precio Máximo (€)</label>
+          <input type="number" id="price_max" name="price_max" min="0" placeholder="10,000,000">
+        </div>
+        <div class="form-group">
+          <label for="bedrooms">Habitaciones</label>
+          <select id="bedrooms" name="bedrooms">
+            <option value="0">Cualquier</option>
+            <option value="1">1+</option>
+            <option value="2">2+</option>
+            <option value="3">3+</option>
+            <option value="4">4+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="location">Ubicación</label>
+          <select id="location" name="location">
+            <option value="">Cualquier</option>
+            {% for loc in locations %}
+            <option value="{{ loc }}">{{ loc }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="type">Tipo de Inmueble</label>
+          <select id="type" name="type">
+            <option value="">Cualquier</option>
+            {% for t in types %}
+            <option value="{{ t }}">{{ t }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+      <div class="text-center mt-6">
+        <button type="button" class="btn" id="filter-btn">Filtrar Propiedades</button>
+      </div>
+    </form>
+
+    <p class="results-info" id="results-info"></p>
+
+    <div class="properties-grid" id="properties-list">
+      {% if properties %}
+      {% for prop in properties %}
+      <div class="property-card" style="--index: {{ loop.index }};" data-price="{{ prop[2] }}" data-bedrooms="{{ prop[3] }}" data-location="{{ prop[4] }}" data-type="{{ prop[5] }}">
+        <div class="property-image-container">
+          <img src="{{ prop[11] or '/static/images/default_property.jpg' }}" alt="{{ prop[1] }}">
+          <span class="badge">Nuevo</span>
+        </div>
+        <div class="card-content">
+          <h3>{{ prop[1] }}</h3>
+          <p class="details">{{ prop[4] }} | {{ prop[3] }} hab. | {{ prop[2] | format_price }}€</p>
+          <p class="description">{{ prop[9] }}</p>
+          <div class="card-actions">
+            <a href="/property/{{ prop[0] }}" class="btn-sm btn-outline">Ver Detalles</a>
+            <button type="button" class="btn-sm btn-outline">Guardar</button>
+            <a href="/contact" class="btn-sm btn-primary">Contactar</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <p class="text-center text-gray-600 col-span-full">No se encontraron propiedades con los filtros seleccionados.</p>
+      {% endif %}
     </div>
+  </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.property-card');
+    const resultInfo = document.getElementById('results-info');
+
+    document.getElementById('filter-btn').addEventListener('click', () => {
+      const minPrice = parseInt(document.getElementById('price_min').value) || 0;
+      const maxPrice = parseInt(document.getElementById('price_max').value) || Infinity;
+      const bedrooms = parseInt(document.getElementById('bedrooms').value) || 0;
+      const location = document.getElementById('location').value.toLowerCase();
+      const type = document.getElementById('type').value.toLowerCase();
+
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const price = parseInt(card.dataset.price);
+        const beds = parseInt(card.dataset.bedrooms);
+        const loc = card.dataset.location.toLowerCase();
+        const typ = card.dataset.type.toLowerCase();
+
+        const matches =
+          price >= minPrice &&
+          price <= maxPrice &&
+          beds >= bedrooms &&
+          (location === '' || loc.includes(location)) &&
+          (type === '' || typ.includes(type));
+
+        card.style.display = matches ? '' : 'none';
+        if (matches) visibleCount++;
+      });
+
+      resultInfo.textContent = visibleCount
+        ? `Se encontraron ${visibleCount} propiedades.`
+        : `No se encontraron propiedades con los filtros seleccionados.`;
+    });
+  });
+</script>
 {% endblock %}
