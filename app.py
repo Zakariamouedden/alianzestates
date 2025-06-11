@@ -149,20 +149,20 @@ def send_email():
     except Exception as e:
         print(f"Error en /api/send-email: {str(e)}")
         return jsonify({'status': 'error', 'message': str(e)}), 500
-
+    
 @app.route('/service/<int:id>')
 def service_detail(id):
     try:
         services = [
-            {'id': 1, 'title': 'Venta de Propiedades', 'description': 'Ofrecemos una amplia selección de propiedades de lujo, desde villas hasta áticos, en las mejores ubicaciones de la Costa del Sol.'},
-            {'id': 2, 'title': 'Obra Nueva', 'description': 'Descubre nuestros proyectos de obra nueva, diseñados con los más altos estándares de calidad y sostenibilidad.'},
-            {'id': 3, 'title': 'Consultoría de Inversiones', 'description': 'Nuestros expertos te guiarán para maximizar el retorno de tu inversión en el mercado inmobiliario.'},
-            {'id': 4, 'title': 'Construcciones', 'description': 'Proyectos de construcción personalizados para crear el hogar de tus sueños.'}
+            {'id': 1, 'title': 'Venta de Propiedades', 'description': 'Ofrecemos una amplia selección de propiedades de lujo, desde villas hasta áticos, en las mejores ubicaciones de la Costa del Sol.', 'template': 'service-venta-propiedades.html'},
+            {'id': 2, 'title': 'Obra Nueva', 'description': 'Descubre nuestros proyectos de obra nueva, diseñados con los más altos estándares de calidad y sostenibilidad.', 'template': 'service-obra-nueva.html'},
+            {'id': 3, 'title': 'Consultoría de Inversiones', 'description': 'Nuestros expertos te guiarán para maximizar el retorno de tu inversión en el mercado inmobiliario.', 'template': 'service-consultoria-inversiones.html'},
+            {'id': 4, 'title': 'Construcciones', 'description': 'Proyectos de construcción personalizados para crear el hogar de tus sueños.', 'template': 'service-construcciones.html'}
         ]
         service = next((s for s in services if s['id'] == id), None)
         if not service:
             return "Servicio no encontrado", 404
-        return render_template('service_detail.html', service=service)
+        return render_template(service['template'], service=service)
     except Exception as e:
         print(f"Error en /service/{id}: {e}")
         return "Error al cargar el servicio", 500
